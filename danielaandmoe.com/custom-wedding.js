@@ -107,26 +107,30 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize balloon game
     const balloonGame = new BalloonGame();
     
-    // Enhanced Flip Card Interactions
+    // Enhanced Flip Card Interactions - Click/Tap for All Devices
     class FlipCardEnhancer {
         constructor() {
             this.init();
         }
         
         init() {
-            document.querySelectorAll('.flip-card').forEach(card => {
-                card.addEventListener('click', () => this.flipCard(card));
+            // Remove hover and enable click for all index-fact cards
+            document.querySelectorAll('.index-fact').forEach(card => {
+                // Skip the intro card
+                if (card.classList.contains('index-fact__intro')) return;
                 
-                // Add touch support for mobile
+                card.addEventListener('click', () => this.flipCard(card));
                 card.addEventListener('touchstart', () => this.flipCard(card));
+                
+                // Add cursor pointer to indicate clickability
+                card.style.cursor = 'pointer';
+                card.style.userSelect = 'none';
             });
         }
         
         flipCard(card) {
-            const inner = card.querySelector('.flip-card-inner');
-            inner.style.transform = inner.style.transform === 'rotateY(180deg)' 
-                ? 'rotateY(0deg)' 
-                : 'rotateY(180deg)';
+            // Toggle the is-active class which handles the flip animation
+            card.classList.toggle('is-active');
         }
     }
     

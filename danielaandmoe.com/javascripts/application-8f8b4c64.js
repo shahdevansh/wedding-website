@@ -26,9 +26,8 @@ function findObjectByKey(e, t, n) {
   return null;
 }
 function loadFacts() {
-  if (isMobile) {
-    $(".index-fact").on("click", toggleFact);
-  }
+  // Enable click for all devices, not just mobile
+  $(".index-fact").on("click", toggleFact);
 }
 function toggleFact() {
   this.classList.toggle("is-active");
