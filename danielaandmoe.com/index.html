@@ -5,7 +5,24 @@
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Devansh & Nehali - January 3-4, 2026 | Goa </title>
-    <meta name="description" content="Join us for a celebration of love in Goa! Devansh Shah and Nehali Jain are getting married January 3-4, 2026 at Caravela Beach Resort, Goa.">
+    <meta name="description" content="Join us for a celebration of love in Goa! Devansh Shah and Nehali Jain are getting married on January 4th, 2026 at Caravela Beach Resort in Goa.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devansh-nehali-wedding-website.vercel.app/">
+    <meta property="og:title" content="Devansh & Nehali | January 2026 | Goa">
+    <meta property="og:description" content="Join us for a celebration of love in Goa! Devansh Shah and Nehali Jain are getting married on January 4th, 2026 at Caravela Beach Resort in Goa.">
+    <meta property="og:image" content="https://devansh-nehali-wedding-website.vercel.app/images/nehali_sketch_beach.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Devansh & Nehali Wedding - Nikku + Tinku">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://devansh-nehali-wedding-website.vercel.app/">
+    <meta property="twitter:title" content="Devansh & Nehali - January 3-4, 2026 | Goa Wedding">
+    <meta property="twitter:description" content="Join us for a celebration of love in Goa! Devansh Shah and Nehali Jain are getting married January 3-4, 2026 at Caravela Beach Resort, Goa.">
+    <meta property="twitter:image" content="https://devansh-nehali-wedding-website.vercel.app/images/nehali_sketch_beach.jpg">
     
     <link href="stylesheets/application-7c2a332c.css" rel="stylesheet" />
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon-da81668a.png">
@@ -19,6 +36,15 @@
             --powder-blue: #B0E0E6;
             --warm-pink: #FF8FA3;
             --deep-teal: #006A6B;
+        }
+
+        /* Story title styling to match shoe-game */
+        .index-story .banger-top {
+            font-family: 'CalibreWeb-Regular', 'Segoe UI', sans-serif;
+            letter-spacing: 2px;
+            font-weight: 600;
+            text-transform: none;  /* Keep original case */
+            margin-bottom: 2rem;
         }
         
         body {
@@ -308,19 +334,474 @@
             .section-title {
                 font-size: 2rem;
             }
+            
+            /* Travel section mobile responsiveness */
+            #travel .col-md-6 {
+                margin-bottom: 2rem;
+            }
+            
+            #travel .col-md-6:last-child {
+                padding-left: 1rem;
+            }
+        }
+        
+        /* Custom styles for Things To Do section - Full-width cards */
+        #things-to-do .index-facts__list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        #things-to-do .index-fact {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        #things-to-do .index-fact:not(.index-fact__intro) {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        #things-to-do .index-fact__inner {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        #things-to-do .index-fact__inner-front,
+        #things-to-do .index-fact__inner-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            border-radius: 15px;
+        }
+        
+        #things-to-do .index-fact__inner-back {
+            transform: rotateY(180deg);
+            font-size: inherit; /* use responsive sizes above */
+        }
+        
+        #things-to-do .index-fact__inner-front {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        #things-to-do .index-fact__inner-front-icon {
+            margin-bottom: 1rem;
+        }
+        
+        #things-to-do .index-fact__inner-front h6 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        #things-to-do .index-fact__inner-front p {
+            font-size: 1rem;
+            margin: 0;
+        }
+        
+        #things-to-do .index-fact__inner-back p {
+            margin: 0;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        /* ==== Shoe-Game styles ==== */
+        .shoe-game-section {padding:4rem 0;background:#fff4f0;}
+        .shoe-game-section .banger-top {letter-spacing:2px;}
+        .shoe-select{border:none;border-bottom:2px solid var(--sunset-orange);background:transparent;font-size:1.1rem;margin-left:.5rem;outline:none;}
+        .shoe-game-figures img{max-width:250px;width:100%;height:auto;transition:opacity .3s}
+        @media(max-width:768px){.shoe-game-figures img{max-width:180px}}
+        /* ========================== */
+
+        /* ─── shoe–game extra styles ───────────────── */
+        #shoe-game .shoe-select{
+          font-family:'CalibreWeb-Regular','Segoe UI',sans-serif;
+          background:var(--powder-blue);
+          border:2px solid var(--sunset-orange);
+          border-radius:8px;
+          padding:.35rem 1rem;
+          color:var(--ocean-blue);
+          display:inline-block;
+          max-width:100%;
+          font-size:1.4rem;         /* updated size */
+        }
+        @media(max-width:600px){
+          #shoe-game .shoe-select{
+             width:90%;
+             margin-top:.75rem;
+             font-size:1.4rem;       /* keep same size on mobile */
+          }
+        }
+        #shoe-game .shoe-select:focus{outline:none;box-shadow:0 0 3px var(--sunset-orange);}
+        .shoe-figures .figure{max-width:260px;width:100%;transition:opacity .3s ease}
+        .flipH{transform:scaleX(-1);}          /* horizontal mirror  */
+        @media(max-width:600px){.shoe-figures .figure{max-width:180px}}
+
+        /* FAQ back-face text smaller */
+        #faq .index-fact__inner-back p{
+            font-size:0.7rem;   /* 30% smaller than default 1rem */
+        }
+
+        /* ==== Things-to-Do flipcard tweaks ==== */
+        #things-to-do .index-fact{
+            width:100%;                   /* full row */
+            max-width:none;               /* match FAQ width */
+            border:1px solid #e9ecef;     /* same border as FAQ */
+            border-radius:0;              /* squared corners like FAQ */
+            box-shadow:none;              /* remove custom shadow */
+        }
+        #things-to-do .index-fact__inner-front,
+        #things-to-do .index-fact__inner-back{
+            background:#fff;              /* white like FAQ */
+            color:var(--ocean-blue);      /* readable text */
+        }
+        #things-to-do .index-fact__inner-back{
+            font-size:0.8rem;             /* same 20% reduction rule */
+        }
+        /* tighten space between icon and title */
+        #things-to-do .index-fact__inner-front-icon{margin-bottom:0.5rem}
+        /* ensure icon+title centred nicely on wide cards */
+        #things-to-do .index-fact__inner-front{padding-top:1.5rem}
+        
+        /* Responsive flipcard font sizes across all sections */
+        
+        /* Base desktop sizes */
+        .index-fact__inner-front h6 {
+            font-size: 1rem;
+            line-height: 1.3;
+        }
+        .index-fact__inner-front p {
+            font-size: 1rem;
+        }
+        .index-fact__inner-back p {
+            font-size: 1.17rem; /* Increased by ~30% from 0.9rem */
+        }
+        
+        /* Medium screens */
+        @media (max-width: 992px) {
+            .index-fact__inner-front h6 {
+                font-size: 1.1rem;
+            }
+            .index-fact__inner-front p {
+                font-size: 0.95rem;
+            }
+            .index-fact__inner-back p {
+                font-size: 1.1rem; /* Increased by ~30% from 0.85rem */
+            }
+        }
+        
+        /* Small screens / tablets */
+        @media (max-width: 768px) {
+            .index-fact__inner-front h6 {
+                font-size: 1rem;
+            }
+            .index-fact__inner-front p {
+                font-size: 0.9rem;
+            }
+            .index-fact__inner-back p {
+                font-size: 1.04rem; /* Increased by ~30% from 0.8rem */
+            }
+        }
+        
+        /* Mobile phones */
+        @media (max-width: 480px) {
+            .index-fact__inner-front h6 {
+                font-size: 0.9rem;
+            }
+            .index-fact__inner-front p {
+                font-size: 0.8rem;
+            }
+            .index-fact__inner-back p {
+                font-size: 0.91rem; /* Increased by ~30% from 0.7rem */
+            }
+        }
+        
+        /* Mobile phones small - specific fix for superpower card overflow */
+        @media (max-width: 414px) {
+            .index-fact__inner-front h6 {
+                font-size: 0.85rem; /* Slightly smaller to prevent overflow */
+                line-height: 1.3; /* Tighter line height for better fit */
+            }
+            .index-fact__inner-front p {
+                font-size: 0.75rem;
+            }
+            .index-fact__inner-back p {
+                font-size: 0.88rem; /* Still ~30% larger than original but fits in card */
+            }
+        }
+        
+        /* Override specific sections that had custom sizing */
+        #faq .index-fact__inner-back p {
+            font-size: inherit; /* use responsive sizes above */
+        }
+        
+        #things-to-do .index-fact__inner-back {
+            font-size: inherit; /* use responsive sizes above */
+        }
+
+        /* Floating RSVP Button Styles */
+        .rsvp-floating-button {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+
+        .rsvp-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            background: linear-gradient(135deg, var(--sunset-orange), var(--warm-pink));
+            color: white;
+            text-decoration: none;
+            padding: 22px 44px;
+            border-radius: 50px;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+            transition: all 0.3s ease;
+            font-family: 'CalibreWeb-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            min-width: 200px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .rsvp-cta:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.6);
+            background: linear-gradient(135deg, var(--warm-pink), var(--sunset-orange));
+            color: white;
+            text-decoration: none;
+        }
+
+        .rsvp-cta:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        .infinite-love-icon {
+            width: 40px;
+            height: 30px;
+            filter: brightness(0) invert(1); /* Makes the icon white */
+            flex-shrink: 0;
+            object-fit: contain;
+        }
+
+        .rsvp-text {
+            white-space: nowrap;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .rsvp-floating-button {
+                bottom: 20px;
+            }
+            
+            .rsvp-cta {
+                padding: 20px 38px;
+                font-size: 1.3rem;
+                gap: 16px;
+                min-width: 180px;
+            }
+            
+            .infinite-love-icon {
+                width: 36px;
+                height: 27px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .rsvp-floating-button {
+                bottom: 15px;
+            }
+            
+            .rsvp-cta {
+                padding: 18px 34px;
+                font-size: 1.2rem;
+                gap: 14px;
+                min-width: 160px;
+            }
+            
+            .infinite-love-icon {
+                width: 32px;
+                height: 24px;
+            }
+        }
+
+        /* Ensure button doesn't interfere with content */
+        body {
+            padding-bottom: 120px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 110px;
+            }
+        }
+
+        /* Wishes Tree Specific Styles */
+        .wishes-tree-section {
+            font-family: 'CalibreWeb-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .wish-leaf {
+            cursor: pointer;
+            filter: url(#leafShadow);
+            transition: opacity 0.2s ease;
+        }
+
+        .wish-leaf:hover {
+            opacity: 0.8;
+        }
+
+        .wish-leaf-text {
+            font-size: 10px;
+            fill: white;
+            text-anchor: middle;
+            pointer-events: none;
+            font-weight: bold;
+        }
+
+        /* Animations */
+        @keyframes leafGrow {
+            0% { transform: scale(0) rotate(0deg); opacity: 0; }
+            50% { transform: scale(1.2) rotate(180deg); opacity: 0.8; }
+            100% { transform: scale(1) rotate(360deg); opacity: 1; }
+        }
+
+        .leaf-appear {
+            animation: leafGrow 1s ease-out;
+        }
+
+        /* Form Enhancements */
+        .form-control:focus {
+            outline: none;
+            border-color: var(--sunset-orange);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Modal Enhancements */
+        .modal {
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .wishes-tree-container {
+                margin-bottom: 2rem;
+            }
+            
+            #wishesTreeSvg {
+                height: 400px;
+            }
+            
+            .tree-stats {
+                position: relative !important;
+                top: auto !important;
+                right: auto !important;
+                margin-top: 1rem;
+                text-align: center;
+            }
+        }
+
+        /* Story Title Font Fix */
+        #story h2.banger-top {
+            font-family: 'CalibreWeb-Regular', 'Segoe UI', sans-serif !important;
+            letter-spacing: 2px !important;
+            font-weight: 600 !important;
+            font-size: 2.5rem;
+        }
+
+        .story-title {
+            font-family: 'CalibreWeb-Regular', 'Segoe UI', sans-serif !important;
+            letter-spacing: 2px !important;
+            font-weight: 600 !important;
+        }
+
+        /* Large desktop screens - prevent text from getting too large */
+        @media (min-width: 1200px) {
+            .index-fact__inner-front h6 {
+                font-size: 0.95rem;
+                line-height: 1.3;
+            }
         }
     </style>
+    
+    <!-- Firebase Configuration -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getFirestore, collection, addDoc, onSnapshot, query, orderBy } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+
+        // Firebase configuration - Replace with your actual config
+        const firebaseConfig = {
+            apiKey: "AIzaSyBQgGbB8VQw5k1RtFwxKpQ3jM9_XrS6vPo",
+            authDomain: "devansh-nehali-wedding.firebaseapp.com",
+            projectId: "devansh-nehali-wedding",
+            storageBucket: "devansh-nehali-wedding.appspot.com",
+            messagingSenderId: "123456789012",
+            appId: "1:123456789012:web:abcdef123456789"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        
+        // Make db available globally
+        window.wishesDB = db;
+        window.addDoc = addDoc;
+        window.collection = collection;
+        window.onSnapshot = onSnapshot;
+        window.query = query;
+        window.orderBy = orderBy;
+    </script>
 </head>
 
 <body>
     <!-- Navigation -->
     <nav class="nav">
         <ul class="nav-list">
-            <li><a href="#story">Our Story</a></li>
-            <li><a href="#tidbits">Fun Facts</a></li>
+            <li><a href="#story">Story</a></li>
             <li><a href="#events">Events</a></li>
             <li><a href="#travel">Travel</a></li>
-            <li><a href="#rsvp">RSVP</a></li>
+            <li><a href="#shoe-game">Fun</a></li>
+            <li><a href="#wishes-tree">Wishes</a></li>
+            <li><a href="#faq">FAQ</a></li>
         </ul>
     </nav>
 
@@ -404,13 +885,23 @@
             <div class="row justify-content-md-center">
                 <div class="col col-md-10">
                     <h5 class="text-center">Our Story</h5>
-                    <h2 class="text-center">7 years, 7 oceans, 7 vows.</h2>
+                    <h2 class="text-center banger-top story-title">7 years, 7 seas, 7 vows.</h2>
                     <p class="large">
-                        Ours wasn't love at first sight. We met 7 years back in 2018. What started as mutual admiration brewed over years of seeing each other grow through tough times: Sometimes at the airport, sometimes on LinkedIn, and other times through stories from our many friends. This bond gave us confidence to start a relationship 7 oceans apart and we've only grown closer since. We're asking you to fly across borders as we solidify our commitment into forever with 7 traditional vows.
+                        <b>7 years ago.</b> Ours wasn't love at first sight.
+                        What started with unfettered conversation brewed into deep admiration. Only made stronger over years of seeing each other grow through tough times.
+                        Sometimes at the airport, sometimes via texts, and sometimes through stories from our friends.
                     </p>
                     <p class="large" style="margin-top: 2rem;">
-                        Because we couldn't be here without love that knows no bounds. Love from our parents: who created "unapproved" online matrimonial profiles. Love from our friends: who teased us and persisted because they just knew this was meant to be. Love from all of you: who have made us who we are today. We can't wait to celebrate with you!
+                        <b> 7 seas apart.</b> Distance was never a barrier for falling in love was fate. Engineered by those who love us without bounds. 
+                        Our parents: who created "unapproved" online matrimonial profiles.
+                        Our friends: who teased us and persisted because they just knew this was meant to be.
+                        And all of you: who cheered us along. In someway, you made us who we are today. We wouldn't be here without you!
                     </p>
+                    <p class="large" style="margin-top: 2rem;">
+                        <b>7 pherre together.</b> A lifetime of the same old boundless love is what we're signing up for next.
+                        We're asking you to fly across borders because the vows will feel incomplete without your love & blessings.
+                    </p>
+                </p>
                 </div>
             </div>
         </div>
@@ -419,12 +910,13 @@
     <!-- Fun Facts/Tidbits Section -->
     <section id="tidbits" class="index-facts">
     <div class="index-facts__wrapper">
-            <div class="index-fact__intro">
-          <h5>Fun Facts</h5>
-                <h3>Quirky lil quiz</h3>
-                <h6>Click for Answer</h6>
-            </div>
             <ul class="index-facts__list">
+        <li class="index-fact index-fact__intro">
+          <h5>Fun Facts</h5>
+          <h3>How well do you know us?</h3>
+          <h6><span class="d-md-none">Click</span><span class="d-none d-md-inline">Hover</span> for Answer</h6>
+        </li>
+
         <li class="index-fact">
           <div class="index-fact__inner">
             <div class="index-fact__inner-front">
@@ -434,7 +926,7 @@
                             <h6 style="font-family: 'CalibreWeb-Regular', 'Segoe UI', Arial, sans-serif;">Who made the first move?</h6>
             </div>
             <div class="index-fact__inner-back">
-                            <p>If LinkedIn DM classifies as a first move, that was him!</p>
+                            <p>If LinkedIn DM classifies as a "move", that was Devansh. He's a professional.</p>
             </div>
           </div>
         </li>
@@ -444,23 +936,10 @@
                 <div class="index-fact__inner-front-icon">
                                 <img src="images/icon/calendar-d0eafa06.svg" alt="Calendar">
                 </div>
-                            <h6 style="font-family: 'CalibreWeb-Regular', 'Segoe UI', Arial, sans-serif;">What’s your favorite activity together?</h6>
+                            <h6 style="font-family: 'CalibreWeb-Regular', 'Segoe UI', Arial, sans-serif;">What's our favorite activity together?</h6>
             </div>
             <div class="index-fact__inner-back">
-                            <p>We get lost into each other on a 12 inch screen. We do virtual dates, work out, discuss AI, watch movies and doze off!</p>
-            </div>
-          </div>
-        </li>
-        <li class="index-fact">
-          <div class="index-fact__inner">
-            <div class="index-fact__inner-front">
-                <div class="index-fact__inner-front-icon">
-                                <img src="images/icon/mit-6891628f.svg" alt="MIT">
-                </div>
-                            <h6 style="font-family: 'CalibreWeb-Regular', 'Segoe UI', Arial, sans-serif;">What’s the best meal you’ve had together?</h6>
-            </div>
-            <div class="index-fact__inner-back">
-                            <p>Bub-made palak paneer and diet coke!</p>
+                            <p>We're big believers in vegetating together. That's how we grow!</p>
             </div>
           </div>
         </li>
@@ -470,10 +949,10 @@
                 <div class="index-fact__inner-front-icon">
                                 <img src="images/icon/pasta-20cdfcab.svg" alt="Pasta">
                 </div>
-                            <h6 style="font-family: 'CalibreWeb-Regular', 'Segoe UI', Arial, sans-serif;">What song best describes our relationship?</h6>
+                            <h6 style="font-family: 'CalibreWeb-Regular', 'Segoe UI', Arial, sans-serif;">What's our go-to meal?</h6>
             </div>
             <div class="index-fact__inner-back">
-                            <p><a href="https://open.spotify.com/track/1ZiReD9pPTttQWwSoYqdyH" target="_blank">Listen on Spotify</a></p>
+                            <p>Nehali's palak paneer and Devansh's diet coke!</p>
             </div>
           </div>
         </li>
@@ -481,12 +960,25 @@
           <div class="index-fact__inner">
             <div class="index-fact__inner-front">
                 <div class="index-fact__inner-front-icon">
-                                <img src="images/icon/cactus-f69624f6.svg" alt="Cactus">
+                                <img src="images/icon/bell-12d84be9.svg" alt="Bell">
                 </div>
-                            <h6 style="font-family: 'CalibreWeb-Regular', 'Segoe UI', Arial, sans-serif;">What’s your most memorable trip?</h6>
+                            <h6 style="font-family: 'CalibreWeb-Regular', 'Segoe UI', Arial, sans-serif;">What song best describes our relationship?</h6>
             </div>
             <div class="index-fact__inner-back">
-                            <p>A series of unexpected mishaps, leading up to the most memorable engagement in Turkey!</p>
+                            <p>Tum Aakhon Se Batana. <a href="https://open.spotify.com/track/1ZiReD9pPTttQWwSoYqdyH" target="_blank">Listen on Spotify</a></p>
+            </div>
+          </div>
+        </li>
+        <li class="index-fact">
+          <div class="index-fact__inner">
+            <div class="index-fact__inner-front">
+                <div class="index-fact__inner-front-icon">
+                                <img src="images/icon/mit-6891628f.svg" alt="MIT">
+                </div>
+                            <h6 style="font-family: 'CalibreWeb-Regular', 'Segoe UI', Arial, sans-serif;">What's our most memorable trip?</h6>
+            </div>
+            <div class="index-fact__inner-back">
+                            <p>Our elaborate engagement: A series of secretly rescheduled flights, delays, and roaming Istanbul in a saree led to the most elaborate engagement in Turkey!</p>
             </div>
           </div>
         </li>
@@ -496,10 +988,10 @@
                 <div class="index-fact__inner-front-icon">
                                 <img src="images/icon/home-37d05e2c.svg" alt="Home">
                 </div>
-                            <h6 style="font-family: 'CalibreWeb-Regular', 'Segoe UI', Arial, sans-serif;">Who’s going to take out trash?</h6>
+                            <h6 style="font-family: 'CalibreWeb-Regular', 'Segoe UI', Arial, sans-serif;">Who takes out trash?</h6>
             </div>
             <div class="index-fact__inner-back">
-                            <p>We do everything together</p>
+                            <p>We do all our chores together. Some of them are more romantic than others.</p>
             </div>
           </div>
         </li>
@@ -509,10 +1001,10 @@
                 <div class="index-fact__inner-front-icon">
                                 <img src="images/icon/palm-334ee2e3.svg" alt="Palm">
                 </div>
-                            <h6 style="font-family: 'CalibreWeb-Regular', 'Segoe UI', Arial, sans-serif;">If we could have any superpower as a couple, what would it be?</h6>
+                            <h6 style="font-family: 'CalibreWeb-Regular', 'Segoe UI', Arial, sans-serif;">If we could have any superpower, what would it be?</h6>
             </div>
             <div class="index-fact__inner-back">
-                            <p>Ability to transcend distance to be with each other and our families whenever we want</p>
+                            <p>The ability to teleport to each other or our families whenever we want.</p>
             </div>
           </div>
         </li>
@@ -534,8 +1026,8 @@
         </div>
       </div>
 
-      <!-- Thursday -->
-      <section class="index-events__day">
+      <!-- Friday -->
+      <section class="index-events__day" data-event-day="2">
         <header>
           <div class="row">
             <div class="col-2 col-md-3">
@@ -561,86 +1053,113 @@
             </svg>
           </div>
 
-          <div class="index-event__graphic">
-            <figure class="index-event__image">
-              <img src="images/nehali_sketch_beach.jpg" alt="Mehendi Celebration" style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover;" />
-            </figure>
-          </div>
-
-          <div class="col col-md-3">
-            <div class="row">
-              <div class="col-2">
-                <h6 class="index-event__num">2ND JAN</h6>
-              </div>
-              <div class="col">
-                <h3>Thursday</h3>
-              </div>
+          <!-- Day/Date Row -->
+          <div class="row">
+            <div class="col-md-3">
+              <h3 class="banger-1" style="font-family: inherit;">2nd January</h3>
+            </div>
+            <div class="col-md-9">
+              <h3>Friday</h3>
             </div>
           </div>
 
-          <div class="col-12 col-md-9">
-            <h4>Mehendi Lunch</h4>
-            <div class="index-event__detail">
-              <div class="row">
-                <div class="col-2 col-md-1">
-                  <h6 style="margin-bottom: 0.5rem;">Time</h6>
-                </div>
-                <div class="col col-md-8">
-                  <p>12pm to 4pm</p>
+          <!-- Mehendi Lunch Event Row -->
+          <div class="row" style="margin-top: 2rem;">
+            <div class="col-md-3 d-flex align-items-center justify-content-center" style="padding: 2rem 1rem;">
+              <img src="images/mehendi.png" alt="Mehendi Lunch" style="width: 100%; max-width: 250px; height: auto; border-radius: 50%; object-fit: fill; aspect-ratio: 1;">
+            </div>
+            <div class="col-md-9">
+              <h3>Mehendi</h3>
+              <div class="index-event__detail">
+                <div class="row">
+                  <div class="col-4 col-md-2">
+                    <h6 style="margin-bottom: 0.5rem;">Time</h6>
+                  </div>
+                  <div class="col col-md-7">
+                    <p>12pm to 5pm</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="index-event__detail">
-              <div class="row">
-                <div class="col-2 col-md-1">
-                  <h6 style="margin-bottom: 0.5rem;">Dress</h6>
-                </div>
-                <div class="col col-md-8">
-                  <p>Festive & Bright!</p>
-                </div>
-              </div>
-            </div>
-            <div class="index-event__detail detail-sans">
-              <div class="row">
-                <div class="col-2 col-md-1">
-                  <h6 style="margin-bottom: 0.5rem;">Details</h6>
-                </div>
-                <div class="col col-md-8">
-                  <p class="sans">Join us for a vibrant Mehendi ceremony with music, food, and beautiful henna art to kick off the celebrations.</p>
+              <div class="index-event__detail">
+                <div class="row">
+                  <div class="col-4 col-md-2">
+                    <h6 style="margin-bottom: 0.5rem;">Dress</h6>
+                  </div>
+                  <div class="col col-md-7">
+                    <p>Shades of Green</p>
+                  </div>
                 </div>
               </div>
+              <div class="index-event__detail">
+                <div class="row">
+                  <div class="col-4 col-md-2">
+                    <h6 style="margin-bottom: 0.5rem;">Meal</h6>
+                  </div>
+                  <div class="col col-md-7">
+                    <p>Traditional Goan & South Indian lunch to welcome you into Goa.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="index-event__detail">
+                <div class="row">
+                  <div class="col-4 col-md-2">
+                    <h6 style="margin-bottom: 0.5rem;">Details</h6>
+                  </div>
+                  <div class="col col-md-7">
+                    <p>Our Mehendi ceremony is the ice-breaker for both families with a setup that goes back to our roots.
+                        Rural decor, folk music, traditional food and beautiful mehendi art to kick off the celebrations.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="index-event__divider"></div>
             </div>
+          </div>
 
-            <div class="index-event__divider"></div>
-
-            <h4>Sit down Dinner</h4>
-            <div class="index-event__detail">
-              <div class="row">
-                <div class="col-2 col-md-1">
-                  <h6 style="margin-bottom: 0.5rem;">Time</h6>
-                </div>
-                <div class="col col-md-8">
-                  <p>7pm to 10pm</p>
+          <!-- Sit down Dinner Event Row -->
+          <div class="row">
+            <div class="col-md-3 d-flex align-items-center justify-content-center" style="padding: 2rem 1rem;">
+              <img src="images/cocktail.png" alt="Sit down Dinner" style="width: 100%; max-width: 250px; height: auto; border-radius: 50%; object-fit: fill; aspect-ratio: 1;">
+            </div>
+            <div class="col-md-9">
+              <h3>Family milaap</h3>
+              <div class="index-event__detail">
+                <div class="row">
+                  <div class="col-4 col-md-2">
+                    <h6 style="margin-bottom: 0.5rem;">Time</h6>
+                  </div>
+                  <div class="col col-md-7">
+                    <p>7pm to 10pm</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="index-event__detail">
-              <div class="row">
-                <div class="col-2 col-md-1">
-                  <h6 style="margin-bottom: 0.5rem;">Dress</h6>
-                </div>
-                <div class="col col-md-8">
-                  <p>Formal Evening Wear</p>
+              <div class="index-event__detail">
+                <div class="row">
+                  <div class="col-4 col-md-2">
+                    <h6 style="margin-bottom: 0.5rem;">Dress</h6>
+                  </div>
+                  <div class="col col-md-7">
+                    <p>Men: Suit or dinner jacket. <br>Women: Sarees or Western formal.</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="index-event__detail detail-sans">
-              <div class="row">
-                <div class="col-2 col-md-1">
-                  <h6 style="margin-bottom: 0.5rem;">Details</h6>
+              <div class="index-event__detail">
+                <div class="row">
+                  <div class="col-4 col-md-2">
+                    <h6 style="margin-bottom: 0.5rem;">Meal</h6>
+                  </div>
+                  <div class="col col-md-7">
+                    <p>7-course sit-down dinner served at our large family table.</p>
+                  </div>
                 </div>
-                <div class="col col-md-8">
-                  <p class="sans">An elegant dinner to celebrate with our closest friends and family under the stars.</p>
+              </div>
+              <div class="index-event__detail">
+                <div class="row">
+                  <div class="col-4 col-md-2">
+                    <h6 style="margin-bottom: 0.5rem;">Details</h6>
+                  </div>
+                  <div class="col col-md-7">
+                    <p>Our take on rehersal dinner. We'll celebrate the stars of our one big family. N&D will get the families to sing, toast, play and dance. Don't be a stranger.</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -649,7 +1168,7 @@
       </section>
 
       <!-- Friday -->
-      <section class="index-events__day">
+      <section class="index-events__day" data-event-day="3">
         <header>
         </header>
 
@@ -660,177 +1179,168 @@
             </svg>
           </div>
 
-          <div class="index-event__graphic">
-            <figure class="index-event__image">
-              <img src="images/palihotel@2x-97a8d43d.jpg" alt="Ganesh Stapna & Sangeet" style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover;" />
-            </figure>
+          <!-- Day/Date Row -->
+          <div class="row" style="position: relative; z-index: 1">
+            <div class="col-md-3">
+              <h3 class="banger-1" style="font-family: inherit;">3rd January</h3>
+            </div>
+            <div class="col-md-9">
+              <h3>Saturday</h3>
+            </div>
           </div>
 
-          <div class="row" style="position: relative; z-index: 1">
-            <div class="col col-md-3">
-              <div class="row">
-                <div class="col-2">
-                  <h6 class="index-event__num">3RD JAN</h6>
-                </div>
-                <div class="col">
-                  <h3>Friday</h3>
-                </div>
-              </div>
+          <!-- Ganesh Stapna Lunch Event Row -->
+          <div class="row" style="margin-top: 2rem;">
+            <div class="col-md-3 d-flex align-items-center justify-content-center" style="padding: 2rem 1rem;">
+              <img src="images/puja2.png" alt="Ganesh Stapna Lunch" style="width: 100%; max-width: 250px; height: auto; border-radius: 50%; object-fit: fill; aspect-ratio: 1;">
             </div>
-
-            <div class="col-12 col-md-9">
-              <h4>Ganesh Stapna Lunch</h4>
+            <div class="col-md-9">
+              <h3>Ganesh Stapna & Mayera</h3>
               <div class="index-event__detail">
                 <div class="row">
-                  <div class="col-2 col-md-1">
+                  <div class="col-4 col-md-2">
                     <h6 style="margin-bottom: 0.5rem;">Time</h6>
                   </div>
-                  <div class="col col-md-8">
-                    <p>10am to 12pm</p>
+                  <div class="col col-md-7">
+                    <p>9.30am to 3pm</p>
                   </div>
                 </div>
               </div>
               <div class="index-event__detail">
                 <div class="row">
-                  <div class="col-2 col-md-1">
+                  <div class="col-4 col-md-2">
                     <h6 style="margin-bottom: 0.5rem;">Dress</h6>
                   </div>
-                  <div class="col col-md-8">
-                    <p>Traditional Indian</p>
+                  <div class="col col-md-7">
+                    <p>Light Indianwear. <br>Women: Saree or kurti. <br>Men: Kurtas</p>
                   </div>
                 </div>
               </div>
-              <div class="index-event__detail detail-sans">
-                <div class="row">
-                  <div class="col-2 col-md-1">
-                    <h6 style="margin-bottom: 0.5rem;">Details</h6>
-                  </div>
-                  <div class="col col-md-8">
-                    <p class="sans">We begin our wedding rituals with blessings from Lord Ganesha, followed by a traditional lunch.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="index-event__graphic" style="margin: 2rem 0;">
-                <figure class="index-event__image">
-                  <img src="images/location-b40625a7.png" alt="Ganesh Stapna Lunch" style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover;" />
-                </figure>
-              </div>
-
-              <div class="index-event__divider"></div>
-
-              <h4>Sangeet</h4>
               <div class="index-event__detail">
                 <div class="row">
-                  <div class="col-2 col-md-1">
+                  <div class="col-4 col-md-2">
+                    <h6 style="margin-bottom: 0.5rem;">Meal</h6>
+                  </div>
+                  <div class="col col-md-7">
+                    <p>Food from our home: Gujarati & Rajasthani buffet.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="index-event__detail">
+                <div class="row">
+                  <div class="col-4 col-md-2">
+                    <h6 style="margin-bottom: 0.5rem;">Details</h6>
+                  </div>
+                  <div class="col col-md-7">
+                    <p>We begin the rituals with blessings from Lord Ganesha.<br>
+                        9:30am - 11am: Ganesh Stapna<br>
+                        11.30am - 12:30am: Devansh's Mayera<br>
+                        12am - 3:00pm: Lunch<br>
+                        2pm - 3pm: Nehali' Mayera
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="index-event__divider"></div>
+            </div>
+          </div>
+
+          <!-- Sangeet Event Row -->
+          <div class="row">
+            <div class="col-md-3 d-flex align-items-center justify-content-center" style="padding: 2rem 1rem;">
+              <img src="images/sangeet.png" alt="Sangeet" style="width: 100%; max-width: 250px; height: auto; border-radius: 50%; object-fit: fill; aspect-ratio: 1;">
+            </div>
+            <div class="col-md-9">
+              <h3>Sangeet</h3>
+              <div class="index-event__detail">
+                <div class="row">
+                  <div class="col-4 col-md-2">
                     <h6 style="margin-bottom: 0.5rem;">Time</h6>
                   </div>
-                  <div class="col col-md-8">
+                  <div class="col col-md-7">
                     <p>6pm to 10pm</p>
                   </div>
                 </div>
               </div>
               <div class="index-event__detail">
                 <div class="row">
-                  <div class="col-2 col-md-1">
+                  <div class="col-4 col-md-2">
                     <h6 style="margin-bottom: 0.5rem;">Dress</h6>
                   </div>
-                  <div class="col col-md-8">
-                    <p>Glitz and Glam</p>
+                  <div class="col col-md-7">
+                    <p>Glitz and Glam. Whether you wear Indian or Western, you'll shine bright.
+                        <br> Our tip: Dress like your favourite bollywood star.</p>
                   </div>
                 </div>
               </div>
-              <div class="index-event__detail detail-sans">
+              <div class="index-event__detail">
                 <div class="row">
-                  <div class="col-2 col-md-1">
+                  <div class="col-4 col-md-2">
+                    <h6 style="margin-bottom: 0.5rem;">Meal</h6>
+                  </div>
+                  <div class="col col-md-7">
+                    <p>Taste the world: Food from our favorite countries. 🇯🇵 🇹🇷 🇮🇹 🇮🇳 </p>
+                  </div>
+                </div>
+              </div>
+              <div class="index-event__detail">
+                <div class="row">
+                  <div class="col-4 col-md-2">
                     <h6 style="margin-bottom: 0.5rem;">Details</h6>
                   </div>
-                  <div class="col col-md-8">
-                    <p class="sans">Get ready for a night of music, dance performances, and celebration! Bring your best moves.</p>
+                  <div class="col col-md-7">
+                    <p>Our take on a full-moon party; bollywood style. Enjoy music, rehersed performances & impromptu gigs. Bring lots of energy and none of the hesitation.</p>
                   </div>
                 </div>
               </div>
-
-              <div class="index-event__graphic" style="margin: 2rem 0;">
-                <figure class="index-event__image">
-                  <img src="images/smog-shoppe@2x-7aa07376.jpg" alt="Sangeet Night" style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover;" />
-                </figure>
-              </div>
-
               <div class="index-event__divider"></div>
-
-              <h4>Afterparty</h4>
-              <div class="index-event__detail">
-                <div class="row">
-                  <div class="col-2 col-md-1">
-                    <h6 style="margin-bottom: 0.5rem;">Time</h6>
-                  </div>
-                  <div class="col col-md-8">
-                    <p>10pm Onwards</p>
-                  </div>
-                </div>
-              </div>
-              <div class="index-event__detail detail-sans">
-                <div class="row">
-                  <div class="col-2 col-md-1">
-                    <h6 style="margin-bottom: 0.5rem;">Details</h6>
-                  </div>
-                  <div class="col col-md-8">
-                    <p class="sans">The party doesn't stop! Join us for late-night fun, music, and midnight snacks.</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
-        </div>
 
-        <div class="index-event">
-          <div class="index-event__after" style="z-index: 0;">
-            <svg width="351" height="430" viewBox="0 0 351 430" xmlns="http://www.w3.org/2000/svg">
-              <g fill="none" fill-rule="evenodd">
-                <path d="M176.4 44c11.4-1.7 22.5-6.1 34-5.9 11.5.2 24.3 7.1 25.7 18.5.7 6-1.6 12.7 1.6 17.8 2 3.2 5.7 4.9 9.2 6.3 32.7 13.7 79.5 21.8 98.2 41.2 8 8.4 6.5 35-4.2 47.7-13.9 16.5-41.7 11.6-59 24.5-17.7 13.2-18.9 40.3-34.9 55.6-9.7 9.3-23.6 12.9-37 14.2-44.3 4.2-88.1-13-126.7-35.1-7.1 10.9 4.5 24.2 15 31.8 64.7 46.8 133.6 87.8 205.6 122.3-6.8 7.4-13.6 14.7-20.4 22.1-12.7 13.7-29.6 28.7-47.6 23.7-16.2-4.5-23.7-22.8-36.4-33.7-15.2-13.1-39.4-14.6-56.1-3.4-4.5 3-8.5 6.9-13.4 9.3-6.2 3.1-13.3 3.7-20.2 3.3-40.8-2.4-74-38.1-84-77.7-2.6-10.5-4-21.6-1.8-32.2 2-9.6 6.6-18.4 10.7-27.3 13.9-30.4 21.1-63.8 21.1-97.2 0-25.5-4.1-51.5 2.2-76.1 4.5-17.5 13.9-33.3 23.3-48.8 2.5-4.2 5.4-8.6 10-10.2 7.7-2.6 26 4.4 33.9 5.7 16.9 2.6 34 6.2 51.2 3.6z" fill="#C6D7D0" fill-rule="nonzero"/>
-                <path d="M26.3 103.2c14-13.1 31.9-21.9 43.5-37.1 9.7-12.7 14.2-29 24.5-41.2 13.3-15.7 34.8-22.7 55.4-22.7s40.7 6.2 60.1 13c10.1 3.5 20.5 7.3 31.2 6.6 10.2-.6 19.7-5.2 29.6-7.6 20.4-5 42.9-.5 59.8 12 8.5 6.3 15.8 15 18.2 25.3 4.5 19.1-8.7 38.1-24 50.4-15.4 12.2-33.8 20.8-47 35.4-12.3 13.6-19 31.3-28.3 47.1s-23.3 30.9-41.5 33.2c-18.6 2.3-35.8-9.2-54.1-12.8-21.4-4.2-43.6 2.8-62.5 13.8-5.8 3.4-11.8 7.3-18.5 7.5-4.2.1-8.3-1.2-12.2-2.6-27.3-9.9-51.2-20.6-57.5-51.3-5.1-24.6 5.2-52.2 23.3-69z" stroke="#092A49" stroke-width="3"/>
-              </g>
-            </svg>
-          </div>
-
-          <div class="index-event__graphic">
-            <figure class="index-event__image">
-              <img src="images/fathers-office@2x-35b0845d.jpg" alt="After Party" style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover;" />
-            </figure>
-          </div>
-
-          <div class="row" style="position: relative; z-index: 1">
-            <div class="col col-md-3">
-              <div class="row">
-                <div class="col-2">
-                  <h6 class="index-event__num">3RD JAN</h6>
-                </div>
-                <div class="col">
-                  <h3>Friday</h3>
-                </div>
-              </div>
+          <!-- Afterparty Event Row -->
+          <div class="row">
+            <div class="col-md-3 d-flex align-items-center justify-content-center" style="padding: 2rem 1rem;">
+              <img src="images/afterparty.png" alt="Afterparty" style="width: 100%; max-width: 250px; height: auto; border-radius: 50%; object-fit: fill; aspect-ratio: 1;">
             </div>
-
-            <div class="col-12 col-md-9">
-              <h4>Afterparty</h4>
+            <div class="col-md-9">
+              <h3>Afterparty</h3>
               <div class="index-event__detail">
                 <div class="row">
-                  <div class="col-2 col-md-1">
+                  <div class="col-4 col-md-2">
                     <h6 style="margin-bottom: 0.5rem;">Time</h6>
                   </div>
-                  <div class="col col-md-8">
-                    <p>10pm Onwards</p>
+                  <div class="col col-md-7">
+                    <p>10pm - Till you drop</p>
                   </div>
                 </div>
               </div>
-              <div class="index-event__detail detail-sans">
+              <div class="index-event__detail">
                 <div class="row">
-                  <div class="col-2 col-md-1">
+                  <div class="col-4 col-md-2">
+                    <h6 style="margin-bottom: 0.5rem;">Dress</h6>
+                  </div>
+                  <div class="col col-md-7">
+                    <p>No need to change your sangeet outfit but we don't judge pyjamas either!</p>
+                  </div>
+                </div>
+              </div>
+              <div class="index-event__detail">
+                <div class="row">
+                  <div class="col-4 col-md-2">
+                    <h6 style="margin-bottom: 0.5rem;">Meal</h6>
+                  </div>
+                  <div class="col col-md-7">
+                    <p>Maggie and Chai</p>
+                  </div>
+                </div>
+              </div>
+              <div class="index-event__detail">
+                <div class="row">
+                  <div class="col-4 col-md-2">
                     <h6 style="margin-bottom: 0.5rem;">Details</h6>
                   </div>
-                  <div class="col col-md-8">
-                    <p class="sans">The party doesn't stop! Join us for late-night fun, music, and midnight snacks.</p>
+                  <div class="col col-md-7">
+                    <p>Sshh.. This indoors party is for the spicy gupshup, unseen moves and unhinged conversations. Let's bring back those college days.</p>
                   </div>
                 </div>
               </div>
@@ -839,8 +1349,8 @@
         </div>
       </section>
 
-      <!-- Saturday -->
-      <section class="index-events__day">
+      <!-- Sunday -->
+      <section class="index-events__day" data-event-day="4">
         <header>
         </header>
 
@@ -857,175 +1367,215 @@
             </svg>
           </div>
 
-          <div class="index-event__graphic">
-            <figure class="index-event__image">
-              <img src="images/santa-monica-9baa3824.jpg" alt="Saturday Wedding Events" style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover;" />
-            </figure>
+          <!-- Day/Date Row -->
+          <div class="row">
+            <div class="col-md-3">
+              <h3 class="banger-1" style="font-family: inherit;">4th January</h3>
+            </div>
+            <div class="col-md-9">
+              <h3>Sunday</h3>
+            </div>
           </div>
 
-          <div class="row">
-            <div class="col col-md-3">
-              <div class="row">
-                <div class="col-2">
-                  <h6 class="index-event__num">4TH JAN</h6>
-                </div>
-                <div class="col">
-                  <h3>Saturday</h3>
-                </div>
-              </div>
+          <!-- Haldi Event Row -->
+          <div class="row" style="margin-top: 2rem;">
+            <div class="col-md-3 d-flex align-items-center justify-content-center" style="padding: 2rem 1rem;">
+              <img src="images/haldi_final.png" alt="Haldi" style="width: 100%; max-width: 250px; height: auto; border-radius: 50%; object-fit: fill; aspect-ratio: 1;">
             </div>
-
-            <div class="col-12 col-md-9">
-              <h4>Haldi</h4>
+            <div class="col-md-9">
+              <h3>Haldi</h3>
               <div class="index-event__detail">
                 <div class="row">
-                  <div class="col-2 col-md-1">
+                  <div class="col-4 col-md-2">
                     <h6 style="margin-bottom: 0.5rem;">Time</h6>
                   </div>
-                  <div class="col col-md-8">
+                  <div class="col col-md-7">
                     <p>10am</p>
                   </div>
                 </div>
               </div>
               <div class="index-event__detail">
                 <div class="row">
-                  <div class="col-2 col-md-1">
+                  <div class="col-4 col-md-2">
                     <h6 style="margin-bottom: 0.5rem;">Dress</h6>
                   </div>
-                  <div class="col col-md-8">
-                    <p>Shades of Yellow</p>
+                  <div class="col col-md-7">
+                    <p>Shades of Yellow. It may rain, carry some change.</p>
                   </div>
                 </div>
               </div>
-              <div class="index-event__detail detail-sans">
+              <div class="index-event__detail">
                 <div class="row">
-                  <div class="col-2 col-md-1">
+                  <div class="col-4 col-md-2">
+                    <h6 style="margin-bottom: 0.5rem;">Meal</h6>
+                  </div>
+                  <div class="col col-md-7">
+                    <p>Streets of Delhi: Light lunch with chaats, fun-foods and delicacies that'll take you back to childhood.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="index-event__detail">
+                <div class="row">
+                  <div class="col-4 col-md-2">
                     <h6 style="margin-bottom: 0.5rem;">Details</h6>
                   </div>
-                  <div class="col col-md-8">
-                    <p class="sans">A traditional Haldi ceremony to get us glowing for the big moment! Prepare for a lot of yellow!</p>
+                  <div class="col col-md-7">
+                    <p>A traditional Haldi ceremony to marinate us for the big day! Let your inner child out. Don't be afraid of some yellow stains or dancing in the rain.</p>
                   </div>
                 </div>
               </div>
-
               <div class="index-event__divider"></div>
+            </div>
+          </div>
 
-              <h4>Baarat</h4>
+          <!-- Baarat Event Row -->
+          <div class="row">
+            <div class="col-md-3 d-flex align-items-center justify-content-center" style="padding: 2rem 1rem;">
+              <img src="images/baarat.png" alt="Baarat" style="width: 100%; max-width: 250px; height: auto; border-radius: 50%; object-fit: fill; aspect-ratio: 1;">
+            </div>
+            <div class="col-md-9">
+              <h3>Baarat</h3>
               <div class="index-event__detail">
                 <div class="row">
-                  <div class="col-2 col-md-1">
+                  <div class="col-4 col-md-2">
                     <h6 style="margin-bottom: 0.5rem;">Time</h6>
                   </div>
-                  <div class="col col-md-8">
-                    <p>4pm</p>
+                  <div class="col col-md-7">
+                    <p>3:30pm</p>
                   </div>
                 </div>
               </div>
               <div class="index-event__detail">
                 <div class="row">
-                  <div class="col-2 col-md-1">
+                  <div class="col-4 col-md-2">
                     <h6 style="margin-bottom: 0.5rem;">Dress</h6>
                   </div>
-                  <div class="col col-md-8">
-                    <p>Wedding Attire</p>
+                  <div class="col col-md-7">
+                    <p>Indian formals. <br>Women: Saree or lehengas. <br>Men: Kurta or Sherwani</p>
                   </div>
                 </div>
               </div>
-              <div class="index-event__detail detail-sans">
-                <div class="row">
-                  <div class="col-2 col-md-1">
-                    <h6 style="margin-bottom: 0.5rem;">Details</h6>
-                  </div>
-                  <div class="col col-md-8">
-                    <p class="sans">The groom's procession – a parade of joy, dancing, and music to the wedding venue.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="index-event__graphic" style="margin: 2rem 0;">
-                <figure class="index-event__image">
-                  <img src="images/mark-dc6f1365.png" alt="Baarat Procession" style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover;" />
-                </figure>
-              </div>
-
-              <div class="index-event__divider"></div>
-
-              <h4>Phere</h4>
               <div class="index-event__detail">
                 <div class="row">
-                  <div class="col-2 col-md-1">
+                  <div class="col-4 col-md-2">
+                    <h6 style="margin-bottom: 0.5rem;">Meal</h6>
+                  </div>
+                  <div class="col col-md-7">
+                    <p>Cool drinks and snacks to beat the heat</p>
+                  </div>
+                </div>
+              </div>
+              <div class="index-event__detail">
+                <div class="row">
+                  <div class="col-4 col-md-2">
+                    <h6 style="margin-bottom: 0.5rem;">Details</h6>
+                  </div>
+                  <div class="col col-md-7">
+                    <p>The groom's parade of joy, with dhol & dance to the mandap. Followed by the first look at our princess-turned-bride.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="index-event__divider"></div>
+            </div>
+          </div>
+
+          <!-- Phere Event Row -->
+          <div class="row">
+            <div class="col-md-3 d-flex align-items-center justify-content-center" style="padding: 2rem 1rem;">
+              <img src="images/phere3.jpeg" alt="Phere" style="width: 100%; max-width: 250px; height: auto; border-radius: 50%; object-fit: fill; aspect-ratio: 1;">
+            </div>
+            <div class="col-md-9">
+              <h3>Phere</h3>
+              <div class="index-event__detail">
+                <div class="row">
+                  <div class="col-4 col-md-2">
                     <h6 style="margin-bottom: 0.5rem;">Time</h6>
                   </div>
-                  <div class="col col-md-8">
+                  <div class="col col-md-7">
                     <p>6pm</p>
                   </div>
                 </div>
               </div>
               <div class="index-event__detail">
                 <div class="row">
-                  <div class="col-2 col-md-1">
+                  <div class="col-4 col-md-2">
                     <h6 style="margin-bottom: 0.5rem;">Dress</h6>
                   </div>
-                  <div class="col col-md-8">
-                    <p>Wedding Attire</p>
+                  <div class="col col-md-7">
+                    <p>Indian formals. <br>Women: Saree or lehengas. <br>Men: Kurta or Sherwani</p>
                   </div>
                 </div>
               </div>
-              <div class="index-event__detail detail-sans">
-                <div class="row">
-                  <div class="col-2 col-md-1">
-                    <h6 style="margin-bottom: 0.5rem;">Details</h6>
-                  </div>
-                  <div class="col col-md-8">
-                    <p class="sans">The sacred wedding ceremony where we take our vows under the open sky.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="index-event__graphic" style="margin: 2rem 0;">
-                <figure class="index-event__image">
-                  <img src="images/location-b40625a7.png" alt="Phere Ceremony" style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover;" />
-                </figure>
-              </div>
-
-              <div class="index-event__divider"></div>
-
-              <h4>Reception Dinner</h4>
               <div class="index-event__detail">
                 <div class="row">
-                  <div class="col-2 col-md-1">
+                  <div class="col-4 col-md-2">
+                    <h6 style="margin-bottom: 0.5rem;">Meal</h6>
+                  </div>
+                  <div class="col col-md-7">
+                    <p>Hi-tea: Our all-time favorite chai, diet coke and some snacks.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="index-event__detail">
+                <div class="row">
+                  <div class="col-4 col-md-2">
+                    <h6 style="margin-bottom: 0.5rem;">Details</h6>
+                  </div>
+                  <div class="col col-md-7">
+                    <p>We'll exchange vows at sunset in front of pious fire, under the open sky at the beach.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="index-event__divider"></div>
+            </div>
+          </div>
+
+          <!-- Dinner Event Row -->
+          <div class="row">
+            <div class="col-md-3 d-flex align-items-center justify-content-center" style="padding: 2rem 1rem;">
+              <img src="images/dinner.png" alt="Dinner" style="width: 100%; max-width: 250px; height: auto; border-radius: 50%; object-fit: fill; aspect-ratio: 1;">
+            </div>
+            <div class="col-md-9">
+              <h3>Toasts</h3>
+              <div class="index-event__detail">
+                <div class="row">
+                  <div class="col-4 col-md-2">
                     <h6 style="margin-bottom: 0.5rem;">Time</h6>
                   </div>
-                  <div class="col col-md-8">
-                    <p>8pm</p>
+                  <div class="col col-md-7">
+                    <p>8:00pm</p>
                   </div>
                 </div>
               </div>
               <div class="index-event__detail">
                 <div class="row">
-                  <div class="col-2 col-md-1">
+                  <div class="col-4 col-md-2">
                     <h6 style="margin-bottom: 0.5rem;">Dress</h6>
                   </div>
-                  <div class="col col-md-8">
-                    <p>Black Tie / Formal</p>
+                  <div class="col col-md-7">
+                    <p>Continue in the Wedding attire. No need to change.</p>
                   </div>
                 </div>
               </div>
-              <div class="index-event__detail detail-sans">
+              <div class="index-event__detail">
                 <div class="row">
-                  <div class="col-2 col-md-1">
+                  <div class="col-4 col-md-2">
+                    <h6 style="margin-bottom: 0.5rem;">Meal</h6>
+                  </div>
+                  <div class="col col-md-7">
+                    <p>We'll serve the first family's favorites delicacies for dinner. We know you'll love these!</p>
+                  </div>
+                </div>
+              </div>
+              <div class="index-event__detail">
+                <div class="row">
+                  <div class="col-4 col-md-2">
                     <h6 style="margin-bottom: 0.5rem;">Details</h6>
                   </div>
-                  <div class="col col-md-8">
-                    <p class="sans">Let's celebrate our union with a grand feast, toasts, and dancing all night long!</p>
+                  <div class="col col-md-7">
+                    <p>The stage is all yours. Hold a hand on the dance floor, a glass at the toasts and many memories to carry back home.</p>
                   </div>
                 </div>
-              </div>
-
-              <div class="index-event__graphic" style="margin: 2rem 0;">
-                <figure class="index-event__image">
-                  <img src="images/map-blur-300cbc3c.png" alt="Reception Dinner" style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover;" />
-                </figure>
               </div>
             </div>
           </div>
@@ -1034,112 +1584,138 @@
     </section>
 
     <!-- Travel & Accommodation -->
-    <section id="travel" class="index-la">
+    <section id="travel" class="index-section index-la" style="padding: 4rem 0;">
         <div class="container">
-             <header class="page-header text-center">
-                <h5 class="page-header__subtitle">20 AND HUMID</h5>
-                <h2 class="page-header__title">Goa, India</h2>
-            </header>
-            <div class="index-la__map">
-                 <div class="index-la__map-image" style="position: relative; padding: 0 1rem;">
-                    <img src="images/airport_distance.png" alt="Airport Distance Map" style="opacity: 0.9; border-radius: 15px; width: 100%; max-width: 700px; height: auto; object-fit: contain; display: block; margin: 0 auto; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                     <div class="index-la__map-mark" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none;">
-                        <div class="index-la__map-mark-image">
-                            <img src="images/location-b40625a7.png" alt="Location marker" style="width: 30px; height: 30px;" />
-          </div>
-        </div>
-      </div>
+            <!-- Header matching events section style -->
+            <div class="row justify-content-md-center" style="margin-bottom: 3rem;">
+                <div class="col index-events__intro intro-banger">
+                    <h5 class="text-center banger-top">25°C AND HUMID</h5>
+                    <h3 class="text-center">
+                        <span class="banger-1">Goa</span>
+                        <span class="banger-2">Caravela Beach Resort</span>
+                    </h3>
+                </div>
             </div>
-            <div class="row index-la__cards">
-                <div class="col-md-4">
-        <div class="index-la__card">
-          <div class="index-la__card-icon">
-                            <img src="images/icon/fork-6cabbaef.svg" alt="Fork">
-          </div>
-          <h4>Eat</h4>
-          <ul>
-                            <li><p>Discover local Goan delicacies and fresh seafood at the resort's various restaurants.</p></li>
-          </ul>
-        </div>
+            
+            <!-- Two-column layout for map and instructions -->
+            <div class="row" style="margin-bottom: 4rem;">
+                <!-- Left Column - Map Image -->
+                <div class="col-md-6 d-flex align-items-center justify-content-center" style="margin-bottom: 2rem;">
+                    <div style="width: 100%; max-width: 500px;">
+                        <img src="images/mopa_dabolim_2.png" alt="Goa Airport Map" 
+                             style="width: 100%; height: auto; object-fit: cover; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    </div>
                 </div>
-                <div class="col-md-4">
-        <div class="index-la__card">
-          <div class="index-la__card-icon">
-                            <img src="images/icon/drink-de5bc5bc.svg" alt="Drink">
-          </div>
-          <h4>Drink</h4>
-          <ul>
-                            <li><p>Enjoy refreshing cocktails and mocktails by the beach as you soak in the sunset.</p></li>
-          </ul>
-        </div>
+                
+                <!-- Right Column - Travel Instructions -->
+                <div class="col-md-6 d-flex align-items-center" style="padding-left: 2rem;">
+                    <div>
+                        <p style="font-size: 1.3rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                            Please book your travel early. Goa gets busy in this period. <br> <i>We recommend flying into Dabolim airport (GOI)</i> which is 45-mins from the venue.
+                            Mopa (GOX) is another option that's 90-mins away.
+                        </p>
+                        
+                        <p style="font-size: 1.3rem; line-height: 1.6; margin-bottom: 1rem;">
+                            Please plan to reach the venue by 12 noon to make the most of the day.
+                        </p>
+                        
+                        <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                            <p style="margin-bottom: 0.5rem;"><strong>Recommended morning flights:</strong></p>
+                            <p style="margin-bottom: 0.5rem;"><strong>Delhi:</strong> 6E 5301, QP 1355, 6E 5067, 6E 2277</p>
+                            <p style="margin-bottom: 0.5rem;"><strong>Ahmedabad:</strong> 6E 6375</p>
+                            <p style="margin-bottom: 0.5rem;"><strong>Mumbai:</strong> 6E 5307, AI 2841</p>
+                            <p style="margin-bottom: 0;"><strong>Bangalore:</strong> 6E 6526</p>
+                        </div>
+                        
+                        <p style="font-size: 1.3rem; line-height: 1.6;">
+                            However you chose to arrive, our planning team will ensure you have a ride waiting at the airport.
+                            <br><a href="https://maps.app.goo.gl/GNF9HMAr7GCYD3Hy9" style="color: #007bff; text-decoration: underline;">See the resort on Maps.</a>
+                        </p>
+                    </div>
                 </div>
-                <div class="col-md-4">
-        <div class="index-la__card">
-          <div class="index-la__card-icon">
-                            <img src="images/icon/glasses-7bea2aee.svg" alt="Play">
-          </div>
-          <h4>Play</h4>
-          <ul>
-                           <li><p>Laze on a sunbed, go parasailing, play a round of golf, or enjoy a morning yoga session.</p></li>
-          </ul>
+            </div>
         </div>
-                </div>
-      </div>
-    </div>
-  </section>
-
-    <!-- Resort Activities -->
-    <section id="activities" style="display:none;">
-        <!-- This section is now part of the 'travel' section above -->
     </section>
 
-    <!-- RSVP Section -->
-    <section id="rsvp" class="index-rsvp">
-    <div class="container">
-            <div class="row">
-                <div class="col-md-6 index-rsvp__left">
-                     <h2>RSVP</h2>
+    <!-- Shoe-Game Section -->
+    <section id="shoe-game" class="index-section shoe-game-section">
+        <div class="container">
+            <div class="row justify-content-md-center" style="margin-bottom:3rem;">
+                <div class="col index-events__intro intro-banger">
+                    <h5 class="text-center banger-top">SHOE-GAME</h5>
+                    <h3 class="text-center">
+                        Who's more likely to
+                        <select id="shoeGameSelect" class="shoe-select">
+                            <option disabled selected value="">— choose —</option>
+                            <option value="0">Pick up their phone</option>
+                            <option value="1">Do the dishes</option>
+                            <option value="2">Plan the trip</option>
+                            <option value="3">Say sorry first</option>
+                            <option value="4">Get us late</option>
+                            <option value="5">Cry in a rom-com</option>
+                            <option value="6">Forget the keys</option>
+                            <option value="7">Order extra dessert</option>
+                        </select>
+                    </h3>
                 </div>
-                <div class="col-md-6 index-rsvp__right">
-                    <div class="index-rsvp__show">
-                        <a href="https://withjoy.com/devansh-and-nehali/rsvp" target="_blank" class="index-rsvp__button">RSVP Now</a>
-                    </div>
+            </div>
+            <div class="row justify-content-center shoe-game-figures">
+                <div class="col-md-6 text-center">
+                    <img id="groomImg" src="images/shoe-game/devansh-std.png" class="figure" alt="Groom">
+                </div>
+                <div class="col-md-6 text-center">
+                    <img id="brideImg" src="images/shoe-game/nehali-std.png" class="figure" alt="Bride">
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
     <!-- FAQ Section -->
     <section id="faq" class="index-facts">
          <div class="index-facts__wrapper">
-            <div class="index-fact__intro">
-                <h5>FAQ</h5>
-                <h3>Frequently Asked<br>Questions</h3>
-</div>
             <ul class="index-facts__list">
+                <li class="index-fact index-fact__intro">
+                  <h5>FAQ</h5>
+                  <h3>Frequently Asked<br>Questions</h3>
+                  <h6><span class="d-md-none">Click</span><span class="d-none d-md-inline">Hover</span> for Answer</h6>
+                </li>
+                
                 <li class="index-fact">
                     <div class="index-fact__inner">
                         <div class="index-fact__inner-front">
                             <div class="index-fact__inner-front-icon">
-                                <img src="images/icon/footprint-ac7d4a6b.svg" alt="Footprint">
-            </div>
-                            <h6>What will the weather be like?</h6>
-            </div>
+                                <img src="images/icon/calendar-d0eafa06.svg" alt="Calendar">
+                            </div>
+                            <h6>When is the RSVP deadline?</h6>
+                        </div>
                         <div class="index-fact__inner-back">
-                            <p>We expect temperatures between 20° to 32°C, but it can feel humid. Pack light, airy and comfortable clothes!</p>
-          </div>
-          </div>
+                            <p>Please RSVP by September 1st for us to plan. Your stay, food and airport transfers are on us! You just need to book your flights.</p>
+                        </div>
+                    </div>
                 </li>
                 <li class="index-fact">
                      <div class="index-fact__inner">
                         <div class="index-fact__inner-front">
                             <div class="index-fact__inner-front-icon">
-                                <img src="images/icon/calendar-d0eafa06.svg" alt="Calendar">
-        </div>
-                            <h6>What should I wear?</h6>
-      </div>
+                                <img src="images/icon/palm-334ee2e3.svg" alt="Palm">
+                            </div>
+                            <h6>What will the weather be like?</h6>
+                        </div>
                         <div class="index-fact__inner-back">
-                            <p>Please see our Events Schedule for dress codes. And then feel free to follow your heart! Just remember - no stiletto heels for the beach venue.</p>
+                            <p>Expect between 20°C to 32°C (68°F to 89.6°F). It will feel humid until 5pm. Dress for comfort.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="index-fact">
+                     <div class="index-fact__inner">
+                        <div class="index-fact__inner-front">
+                            <div class="index-fact__inner-front-icon">
+                                <img src="images/icon/footprint-ac7d4a6b.svg" alt="Footprint">
+                            </div>
+                            <h6>When should we get there?</h6>
+                        </div>
+                        <div class="index-fact__inner-back">
+                            <p>Please plan to arrive at the hotel by 12 noon. Earlier the better!</p>
                         </div>
                     </div>
                 </li>
@@ -1149,10 +1725,10 @@
                             <div class="index-fact__inner-front-icon">
                                 <img src="images/icon/mit-6891628f.svg" alt="MIT">
                             </div>
-                             <h6>Can I take photos?</h6>
+                            <h6>Where are the events?</h6>
                         </div>
                         <div class="index-fact__inner-back">
-                            <p>Yes! We would love for you to take photos and share them on our app Joy.</p>
+                            <p>All celebrations are within Caravela resort, a short walk or golf-cart ride away of your room.</p>
                         </div>
                     </div>
                 </li>
@@ -1160,12 +1736,25 @@
                      <div class="index-fact__inner">
                         <div class="index-fact__inner-front">
                             <div class="index-fact__inner-front-icon">
-                                <img src="images/icon/pasta-20cdfcab.svg" alt="Pasta">
+                                <img src="images/icon/glasses-7bea2aee.svg" alt="Glasses">
                             </div>
-                            <h6>Is the venue wheelchair accessible?</h6>
+                            <h6>I plan to be in Goa before/after the wedding</h6>
                         </div>
                         <div class="index-fact__inner-back">
-                            <p>Yes, the celebrations are ~250m away from your room. We will have a golf cart available for anyone needing assistance getting around.</p>
+                            <p>Please reach out to Meragi for discounted rates at the same resort before or after the event dates.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="index-fact">
+                     <div class="index-fact__inner">
+                        <div class="index-fact__inner-front">
+                            <div class="index-fact__inner-front-icon">
+                                <img src="images/icon/home-37d05e2c.svg" alt="Home">
+                            </div>
+                           <h6>When should we plan to checkout?</h6>
+                        </div>
+                        <div class="index-fact__inner-back">
+                           <p>The checkout time at Caravela resort is 11am. They're happy to hold your luggage longer.</p>
                         </div>
                     </div>
                 </li>
@@ -1175,10 +1764,10 @@
                             <div class="index-fact__inner-front-icon">
                                 <img src="images/icon/cactus-f69624f6.svg" alt="Cactus">
                             </div>
-                           <h6>Whom should I call with questions?</h6>
+                           <h6>I have more questions!</h6>
                         </div>
                         <div class="index-fact__inner-back">
-                           <p>Our lovely planners at Meragi are best qualified for any questions. They're at +91 8087779130. Nehali & Devansh are always available to talk!</p>
+                           <p>Meragi, our lovely planners, are always available at +918087779130. We're just a call away! </p>
                         </div>
                     </div>
                 </li>
@@ -1186,68 +1775,209 @@
     </div>
   </section>
 
+    <!-- Wedding Wishes Tree Section -->
+    <section id="wishes-tree" class="index-section wishes-tree-section"; padding: 4rem 0;">
+        <div class="container">
+            <!-- Header matching other sections -->
+            <div class="row justify-content-md-center" style="margin-bottom: 3rem; margin-top: 3rem;">
+                <div class="col index-events__intro intro-banger">
+                    <h5 class="text-center banger-top">SHARE YOUR LOVE</h5>
+                    <h3 class="text-center">
+                        <span class="banger-1">Wish the</span>
+                        <span class="banger-2">Couple</span>
+                    </h3>
+                    <p class="text-center" style="margin-top: 1rem; font-size: 1.2rem;">
+                        Plant a leaf of love with your wishes, songs, or memories for Devansh & Nehali. <br>Your wishes here are public. You'll enjoy reading what others had to say below!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tree Visualization and Controls -->
+            <div class="row">
+                <!-- Tree Canvas - Full Width -->
+                <div class="col-md-8">
+                    <div class="wishes-tree-container" style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); min-height: 600px; position: relative;">
+                        <svg id="wishesTreeSvg" width="100%" height="600" viewBox="0 0 800 600" style="overflow: visible;">
+                            <!-- Tree Trunk and Branches -->
+                            <defs>
+                                <linearGradient id="trunkGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
+                                    <stop offset="50%" style="stop-color:#A0522D;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#8B4513;stop-opacity:1" />
+                                </linearGradient>
+                                <filter id="leafShadow" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="rgba(0,0,0,0.3)"/>
+                                </filter>
+                            </defs>
+                            
+                            <!-- Main trunk (50% larger) -->
+                            <rect x="375" y="450" width="50" height="200" fill="url(#trunkGradient)" rx="25"/>
+                            
+                            <!-- 9 branches at specified angles -->
+                            <!-- Left side branches -->
+                            <path d="M400 480 Q320 420 240 380 Q200 360 160 330" stroke="url(#trunkGradient)" stroke-width="12" fill="none" stroke-linecap="round"/>
+                            <path d="M400 460 Q340 400 280 360 Q250 340 220 310" stroke="url(#trunkGradient)" stroke-width="10" fill="none" stroke-linecap="round"/>
+                            <path d="M400 440 Q360 380 320 340 Q300 320 280 290" stroke="url(#trunkGradient)" stroke-width="8" fill="none" stroke-linecap="round"/>
+                            <path d="M400 420 Q380 360 360 300 Q350 280 340 250" stroke="url(#trunkGradient)" stroke-width="6" fill="none" stroke-linecap="round"/>
+                            
+                            <!-- Right side branches -->
+                            <path d="M400 480 Q480 420 560 380 Q600 360 640 330" stroke="url(#trunkGradient)" stroke-width="12" fill="none" stroke-linecap="round"/>
+                            <path d="M400 460 Q460 400 520 360 Q550 340 580 310" stroke="url(#trunkGradient)" stroke-width="10" fill="none" stroke-linecap="round"/>
+                            <path d="M400 440 Q440 380 480 340 Q500 320 520 290" stroke="url(#trunkGradient)" stroke-width="8" fill="none" stroke-linecap="round"/>
+                            <path d="M400 420 Q420 360 440 300 Q450 280 460 250" stroke="url(#trunkGradient)" stroke-width="6" fill="none" stroke-linecap="round"/>
+                            
+                            <!-- Center straight up branch -->
+                            <path d="M400 400 Q400 350 400 300 Q400 250 400 200" stroke="url(#trunkGradient)" stroke-width="8" fill="none" stroke-linecap="round"/>
+                            
+                            <!-- Container for wishes leaves -->
+                            <g id="wishesLeaves"></g>
+                        </svg>
+                        
+                        <!-- Tree stats -->
+                        <div class="tree-stats" style="position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.9); padding: 1rem; border-radius: 10px; text-align: center;">
+                            <div style="font-size: 2rem; font-weight: bold; color: var(--sunset-orange);" id="wishCount">0</div>
+                            <div style="font-size: 0.9rem; color: var(--ocean-blue);">Wishes</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wish Submission Form -->
+                <div class="col-md-4">
+                    <div class="wish-form-container" style="background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.1); height: fit-content;">
+                        <h4 style="color: var(--ocean-blue); margin-bottom: 1.5rem; text-align: center;">Add Your Wish</h4>
+                        
+                        <form id="wishForm">
+                            <!-- Wish Type Selection -->
+                            <div class="mb-3">
+                                <label style="color: var(--deep-teal); font-weight: 600; margin-bottom: 0.5rem; display: block;">Type of Wish</label>
+                                <select id="wishType" class="form-control" style="border: 2px solid var(--powder-blue); border-radius: 10px;" required>
+                                    <option value="">Choose type...</option>
+                                    <option value="advice">Marriage Advice</option>
+                                    <option value="memory">Favorite Memory</option>
+                                    <option value="song">Song Recommendation</option>
+                                    <option value="video">Video Message</option>
+                                    <option value="prediction">Future Prediction</option>
+                                </select>
+                            </div>
+
+                            <!-- Main Content -->
+                            <div class="mb-3">
+                                <label style="color: var(--deep-teal); font-weight: 600; margin-bottom: 0.5rem; display: block;" id="contentLabel">Your Wish</label>
+                                <textarea id="wishContent" class="form-control" rows="4" 
+                                          style="border: 2px solid var(--powder-blue); border-radius: 10px; resize: vertical;" 
+                                          placeholder="Share your heartfelt message..." required></textarea>
+                            </div>
+
+                            <!-- YouTube Link (conditional) -->
+                            <div class="mb-3" id="linkContainer" style="display: none;">
+                                <label style="color: var(--deep-teal); font-weight: 600; margin-bottom: 0.5rem; display: block;" id="linkLabel">YouTube Link</label>
+                                <input type="url" id="wishLink" class="form-control" 
+                                       style="border: 2px solid var(--powder-blue); border-radius: 10px;" 
+                                       placeholder="https://youtube.com/..." pattern="^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+">
+                                <small style="color: #666; font-size: 0.8rem;">Paste the YouTube link for the song or video</small>
+                                <div id="linkError" style="color: red; font-size: 0.8rem; display: none;">Please enter a valid YouTube URL</div>
+                            </div>
+
+                            <!-- Name Input -->
+                            <div class="mb-3">
+                                <label style="color: var(--deep-teal); font-weight: 600; margin-bottom: 0.5rem; display: block;">Your Name</label>
+                                <input type="text" id="wishName" class="form-control" 
+                                       style="border: 2px solid var(--powder-blue); border-radius: 10px;" 
+                                       placeholder="Your name (optional)">
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn-primary" style="width: 100%; border: none; padding: 12px; border-radius: 25px; font-size: 1.1rem; font-weight: 600; background: linear-gradient(135deg, var(--sunset-orange), var(--warm-pink)); color: white; cursor: pointer; transition: transform 0.3s ease;">
+                                🌱 Plant Your Wish
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wishes Statistics - Below Tree in FAQ Style -->
+            <div class="row" style="margin-top: 3rem;">
+                <div class="col-md-12">
+                    <h4 style="color: var(--ocean-blue); text-align: center; margin-bottom: 2rem; font-family: 'CalibreWeb-Regular', 'Segoe UI', sans-serif; font-weight: 600;">Wishes made so far</h4>
+                    <div class="wishes-stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
+                        <!-- Advice Card -->
+                        <div class="wish-stat-card" style="background: white; border: 1px solid #e9ecef; padding: 1rem; text-align: center; height: 80px; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-size: 1.5rem; font-weight: bold; color: var(--sunset-orange);" id="adviceCount">0</div>
+                            <div style="font-size: 0.85rem; color: var(--ocean-blue); font-family: 'CalibreWeb-Regular', 'Segoe UI', sans-serif;">Marriage Advice</div>
+                        </div>
+                        <!-- Memory Card -->
+                        <div class="wish-stat-card" style="background: white; border: 1px solid #e9ecef; padding: 1rem; text-align: center; height: 80px; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-size: 1.5rem; font-weight: bold; color: var(--golden-yellow);" id="memoriesCount">0</div>
+                            <div style="font-size: 0.85rem; color: var(--ocean-blue); font-family: 'CalibreWeb-Regular', 'Segoe UI', sans-serif;">Favorite Memories</div>
+                        </div>
+                        <!-- Song Card -->
+                        <div class="wish-stat-card" style="background: white; border: 1px solid #e9ecef; padding: 1rem; text-align: center; height: 80px; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-size: 1.5rem; font-weight: bold; color: var(--warm-pink);" id="songsCount">0</div>
+                            <div style="font-size: 0.85rem; color: var(--ocean-blue); font-family: 'CalibreWeb-Regular', 'Segoe UI', sans-serif;">Song Recommendations</div>
+                        </div>
+                        <!-- Video Card -->
+                        <div class="wish-stat-card" style="background: white; border: 1px solid #e9ecef; padding: 1rem; text-align: center; height: 80px; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-size: 1.5rem; font-weight: bold; color: var(--powder-blue);" id="videosCount">0</div>
+                            <div style="font-size: 0.85rem; color: var(--ocean-blue); font-family: 'CalibreWeb-Regular', 'Segoe UI', sans-serif;">Video Messages</div>
+                        </div>
+                        <!-- Prediction Card -->
+                        <div class="wish-stat-card" style="background: white; border: 1px solid #e9ecef; padding: 1rem; text-align: center; height: 80px; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-size: 1.5rem; font-weight: bold; color: var(--deep-teal);" id="predictionsCount">0</div>
+                            <div style="font-size: 0.85rem; color: var(--ocean-blue); font-family: 'CalibreWeb-Regular', 'Segoe UI', sans-serif;">Future Predictions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View All Wishes Button -->
+            <div class="text-center" style="margin-top: 2rem;">
+                <button id="viewAllWishes" class="btn-primary" style="border: none; padding: 12px 30px; border-radius: 25px; font-size: 1.1rem; font-weight: 600; background: linear-gradient(135deg, var(--ocean-blue), var(--deep-teal)); color: white; cursor: pointer; transition: transform 0.3s ease;">
+                    📖 Read All Wishes
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wishes Modal -->
+    <div id="wishModal" class="modal" style="display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
+        <div class="modal-content" style="background-color: white; margin: 5% auto; padding: 2rem; border-radius: 20px; max-width: 600px; position: relative; max-height: 80vh; overflow-y: auto;">
+            <span class="close" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; position: absolute; right: 1rem; top: 1rem;">&times;</span>
+            <div id="modalContent">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer style="background: var(--deep-teal); color: white; padding: 2rem 0; text-align: center;">
         <div class="container">
-            <p>&copy; 2025 Devansh & Nehali | Made with ❤️ for our special day</p>
-            <p style="font-size: 0.9rem; margin-top: 1rem;">Website by Groom | Illustrations by Bride (coming soon!)</p>
-</div>
+            <p>&copy; 2025 Devansh & Nehali <br> Made with ❤️ for our special day</p>
+        </div>
     </footer>
 
-    <!-- Balloon Message Modal -->
-    <div id="balloonModal" class="hidden">
-        <div class="overlay" onclick="closeBalloonModal()"></div>
-        <div class="balloon-message">
-            <h3 style="color: var(--ocean-blue); margin-bottom: 1rem;">🎈 Balloon Message</h3>
-            <p id="balloonText"></p>
-            <button class="btn-primary" onclick="closeBalloonModal()" style="margin-top: 1rem;">Close</button>
+    <!-- Floating RSVP Button with Infinite Love Symbol -->
+    <div class="rsvp-floating-button">
+        <a href="https://withjoy.com/devansh-and-nehali/rsvp" target="_blank" class="rsvp-cta">
+            <img class="infinite-love-icon" src="images/infi_love.svg" alt="Infinite Love Symbol" />
+            <span class="rsvp-text">RSVP</span>
+        </a>
     </div>
-  </div>
 
     <script>
-        // Balloon game functionality
-        let poppedBalloons = 0;
-        const totalBalloons = 4;
-        
-        document.querySelectorAll('.balloon').forEach(balloon => {
-            balloon.addEventListener('click', function() {
-                if (!this.classList.contains('popped')) {
-                    this.classList.add('popped');
-                    poppedBalloons++;
-                    
-                    // Show balloon message
-                    showBalloonMessage(this.dataset.message);
-                    
-                    // Check if all balloons are popped
-                    if (poppedBalloons === totalBalloons) {
-                        setTimeout(() => {
-                            alert('🎉 Congratulations! You found all our messages! Welcome to our wedding celebration!');
-                        }, 1000);
-                    }
-                }
-            });
-        });
-        
-        function showBalloonMessage(message) {
-            document.getElementById('balloonText').textContent = message;
-            document.getElementById('balloonModal').classList.remove('hidden');
-        }
-        
-        function closeBalloonModal() {
-            document.getElementById('balloonModal').classList.add('hidden');
-        }
-        
         // Smooth scrolling
         function scrollToSection(sectionId) {
             document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
         }
         
-        // RSVP form handling
-        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+        // RSVP form handling (form removed from page, so guard)
+        const rsvpForm = document.getElementById('rsvpForm');
+        if (rsvpForm) {
+          rsvpForm.addEventListener('submit', e => {
             e.preventDefault();
-            alert('Thank you for your RSVP! We\'ll be in touch soon. 💕');
-            this.reset();
-        });
+            alert('Thank you for your RSVP! ��');
+            rsvpForm.reset();
+          });
+        }
         
         // Navigation smooth scrolling
         document.querySelectorAll('nav a').forEach(link => {
@@ -1311,6 +2041,671 @@
             console.log('Final flip cards initialization...');
             initFlipCards();
         }, 2000);
+
+        /* ==== Shoe-Game JS ==== */
+        const shoeQ=[
+          {b:'self',g:'partner'},
+          {b:'self',g:'partner'},
+          {b:'partner',g:'self'},
+          {b:'partner',g:'partner'},
+          {b:'partner',g:'self'},
+          {b:'self',g:'partner'},
+          {b:'partner',g:'partner'},
+          {b:'self',g:'self'}
+        ];
+        const brideImg=document.getElementById('brideImg');
+        const groomImg=document.getElementById('groomImg');
+        function stateSrc(who,ans){
+          if(who==='b'){
+            if(ans==='self')return 'images/shoe-game/nehali-brides.png';
+            if(ans==='partner')return 'images/shoe-game/nehali-grooms.png';
+            return 'images/shoe-game/nehali-std.png';
+          }else{
+            if(ans==='self')return 'images/shoe-game/devansh-grooms.png';
+            if(ans==='partner')return 'images/shoe-game/devansh-brides.png';
+            return 'images/shoe-game/devansh-std.png';
+          }
+        }
+        const stdBride='images/shoe-game/nehali-std.png';
+        const stdGroom='images/shoe-game/devansh-std.png';
+        document.getElementById('shoeGameSelect').addEventListener('change',function(){
+            const idx=parseInt(this.value,10);
+            if(isNaN(idx))return;
+            const a=shoeQ[idx];
+            brideImg.src=stateSrc('b',a.b);
+            groomImg.src=stateSrc('g',a.g);
+            setTimeout(()=>{brideImg.src=stdBride;groomImg.src=stdGroom;},4000);
+        });
+        /* ====================== */
+
+        // Guest Category Management System
+        function initGuestCategories() {
+            // Parse URL parameters
+            function getUrlParameter(name) {
+                const urlParams = new URLSearchParams(window.location.search);
+                // Check for direct parameter (e.g., ?fam)
+                if (urlParams.has(name)) return name;
+                // Check for q parameter (e.g., ?q=fam)
+                const qParam = urlParams.get('q');
+                if (qParam === name) return name;
+                return null;
+            }
+
+            // Get guest category from URL or localStorage
+            function getGuestCategory() {
+                // Check URL parameters first
+                const categories = ['fam', 'ff', 'ef'];
+                for (const category of categories) {
+                    if (getUrlParameter(category)) {
+                        return category;
+                    }
+                }
+                
+                // Check localStorage
+                const stored = localStorage.getItem('wedding_guest_category');
+                if (stored && categories.includes(stored)) {
+                    return stored;
+                }
+                
+                // Default to 'ff' (friends and extended family)
+                return 'ff';
+            }
+
+            // Store category in localStorage
+            function storeGuestCategory(category) {
+                try {
+                    localStorage.setItem('wedding_guest_category', category);
+                } catch (e) {
+                    console.log('localStorage not available');
+                }
+            }
+
+            // Get days to show based on category
+            function getDaysToShow(category) {
+                switch (category) {
+                    case 'fam': // Family - all 3 days
+                        return ['2', '3', '4'];
+                    case 'ff': // Friends and extended family - 2 days
+                        return ['3', '4'];
+                    case 'ef': // Extended friends - 1 day
+                        return ['4'];
+                    default:
+                        return ['3', '4']; // Default to 'ff'
+                }
+            }
+
+            // Apply category-based visibility
+            function applyGuestCategoryVisibility() {
+                const category = getGuestCategory();
+                const daysToShow = getDaysToShow(category);
+                
+                // Store the category for future visits
+                storeGuestCategory(category);
+                
+                // Get all event day sections
+                const eventDays = document.querySelectorAll('[data-event-day]');
+                
+                eventDays.forEach(daySection => {
+                    const dayNumber = daySection.getAttribute('data-event-day');
+                    
+                    if (daysToShow.includes(dayNumber)) {
+                        // Show this day
+                        daySection.style.display = '';
+                        daySection.removeAttribute('hidden');
+                    } else {
+                        // Hide this day
+                        daySection.style.display = 'none';
+                        daySection.setAttribute('hidden', 'true');
+                    }
+                });
+
+                // Log for debugging (remove in production)
+                console.log(`Guest category: ${category}, showing days: ${daysToShow.join(', ')}`);
+            }
+
+            // Initialize on page load
+            applyGuestCategoryVisibility();
+        }
+
+        // Initialize guest categories after DOM content is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initGuestCategories();
+        });
+
+        // Also initialize guest categories after other scripts
+        setTimeout(function() {
+            initGuestCategories();
+        }, 100);
+
+        /* ==== Wedding Wishes Tree JavaScript ==== */
+        
+        // Guard to prevent multiple initializations
+        let wishesTreeInitialized = false;
+        
+        // Wishes Tree Management System
+        function initWishesTree() {
+            // Prevent multiple initializations
+            if (wishesTreeInitialized) {
+                console.log('Wishes tree already initialized, skipping...');
+                return;
+            }
+            wishesTreeInitialized = true;
+            console.log('Initializing wishes tree...');
+            
+            // Wish data storage with Firebase integration
+            let wishes = [];
+            let useFirebase = false;
+
+            // Check if Firebase is available
+            if (window.wishesDB) {
+                useFirebase = true;
+                console.log('Firebase connected successfully');
+                
+                // Real-time listener for all wishes
+                try {
+                    const wishesQuery = window.query(
+                        window.collection(window.wishesDB, 'wishes'), 
+                        window.orderBy('timestamp', 'asc')
+                    );
+                    
+                    window.onSnapshot(wishesQuery, (snapshot) => {
+                        wishes = snapshot.docs.map((doc, index) => ({
+                            id: doc.id,
+                            ...doc.data(),
+                            position: getWishPosition(index)
+                        }));
+                        
+                        // Clear existing leaves and re-render
+                        const leavesContainer = document.getElementById('wishesLeaves');
+                        if (leavesContainer) {
+                            leavesContainer.innerHTML = '';
+                            wishes.forEach(wish => addLeafToTree(wish));
+                            updateStats();
+                        }
+                    });
+                } catch (error) {
+                    console.error('Firebase setup error:', error);
+                    useFirebase = false;
+                    loadLocalWishes();
+                }
+            } else {
+                console.log('Firebase not available, using localStorage');
+                loadLocalWishes();
+            }
+
+            function loadLocalWishes() {
+                wishes = JSON.parse(localStorage.getItem('wedding_wishes') || '[]');
+                wishes.forEach((wish, index) => {
+                    wish.position = getWishPosition(index);
+                    addLeafToTree(wish);
+                });
+                updateStats();
+            }
+            
+            // Updated leaf positions for 9-branch tree (larger viewBox: 800x600)
+            // All positions are carefully placed ON the actual tree branches
+            function getWishPosition(index) {
+                const positions = [
+                    // Left side branch 1 (outermost left - 66° angle)
+                    {x: 160, y: 330}, {x: 180, y: 310}, {x: 200, y: 290}, {x: 220, y: 270}, {x: 240, y: 250},
+                    
+                    // Left side branch 2 (50° angle)
+                    {x: 220, y: 310}, {x: 240, y: 290}, {x: 260, y: 270}, {x: 280, y: 250}, {x: 300, y: 230},
+                    
+                    // Left side branch 3 (33° angle)
+                    {x: 280, y: 290}, {x: 300, y: 270}, {x: 320, y: 250}, {x: 340, y: 230}, {x: 360, y: 210},
+                    
+                    // Left side branch 4 (17.5° angle)
+                    {x: 340, y: 250}, {x: 360, y: 230}, {x: 380, y: 210}, {x: 390, y: 190}, {x: 395, y: 170},
+                    
+                    // Center branch (straight up - 90°)
+                    {x: 400, y: 200}, {x: 400, y: 180}, {x: 400, y: 160}, {x: 400, y: 140}, {x: 400, y: 120}, {x: 400, y: 100},
+                    
+                    // Right side branch 1 (17.5° angle)
+                    {x: 460, y: 250}, {x: 440, y: 230}, {x: 420, y: 210}, {x: 410, y: 190}, {x: 405, y: 170},
+                    
+                    // Right side branch 2 (33° angle)
+                    {x: 520, y: 290}, {x: 500, y: 270}, {x: 480, y: 250}, {x: 460, y: 230}, {x: 440, y: 210},
+                    
+                    // Right side branch 3 (50° angle)
+                    {x: 580, y: 310}, {x: 560, y: 290}, {x: 540, y: 270}, {x: 520, y: 250}, {x: 500, y: 230},
+                    
+                    // Right side branch 4 (outermost right - 66° angle)
+                    {x: 640, y: 330}, {x: 620, y: 310}, {x: 600, y: 290}, {x: 580, y: 270}, {x: 560, y: 250},
+                    
+                    // Additional positions closer to trunk for overflow (avoiding outside branches)
+                    {x: 350, y: 280}, {x: 450, y: 280}, {x: 380, y: 300}, {x: 420, y: 300},
+                    {x: 360, y: 320}, {x: 440, y: 320}, {x: 370, y: 340}, {x: 430, y: 340},
+                    {x: 390, y: 360}, {x: 410, y: 360}, {x: 385, y: 380}, {x: 415, y: 380},
+                    
+                    // More positions on main branches for high traffic
+                    {x: 190, y: 320}, {x: 250, y: 280}, {x: 310, y: 240}, {x: 370, y: 200},
+                    {x: 430, y: 200}, {x: 490, y: 240}, {x: 550, y: 280}, {x: 610, y: 320}
+                ];
+                
+                if (index < positions.length) {
+                    return positions[index];
+                } else {
+                    // For overflow, cycle through existing positions but with small offsets
+                    const basePosition = positions[index % positions.length];
+                    return {
+                        x: basePosition.x + (Math.random() - 0.5) * 20, // Small random offset
+                        y: basePosition.y + (Math.random() - 0.5) * 20
+                    };
+                }
+            }
+
+            // Color schemes for different wish types (removed blessing)
+            const wishColors = {
+                advice: '#FF6B35',      // sunset-orange
+                memory: '#FFD23F',      // golden-yellow  
+                song: '#FF8FA3',        // warm-pink
+                video: '#B0E0E6',       // powder-blue
+                prediction: '#006A6B'   // deep-teal
+            };
+
+            // Initialize form interactions
+            const wishType = document.getElementById('wishType');
+            const wishContent = document.getElementById('wishContent');
+            const wishLink = document.getElementById('wishLink');
+            const linkContainer = document.getElementById('linkContainer');
+            const contentLabel = document.getElementById('contentLabel');
+            const linkLabel = document.getElementById('linkLabel');
+            const wishForm = document.getElementById('wishForm');
+            const wishName = document.getElementById('wishName');
+            const linkError = document.getElementById('linkError');
+
+            // Update form based on wish type
+            wishType.addEventListener('change', function() {
+                const type = this.value;
+                linkContainer.style.display = (type === 'song' || type === 'video') ? 'block' : 'none';
+                
+                // Update labels and placeholders
+                const labels = {
+                    advice: { content: 'Your Marriage Advice', placeholder: 'Share your wisdom for a happy marriage...' },
+                    memory: { content: 'Your Favorite Memory', placeholder: 'Tell us about a special moment with the couple...' },
+                    song: { content: 'Why This Song?', placeholder: 'Tell us why this song is perfect for them...' },
+                    video: { content: 'Video Message', placeholder: 'Share your video message for the couple...' },
+                    prediction: { content: 'Your Prediction', placeholder: 'What do you predict for their future?...' }
+                };
+                
+                if (labels[type]) {
+                    contentLabel.textContent = labels[type].content;
+                    wishContent.placeholder = labels[type].placeholder;
+                    if (type === 'video') {
+                        linkLabel.textContent = 'YouTube Video Link';
+                    } else if (type === 'song') {
+                        linkLabel.textContent = 'YouTube Song Link';
+                    }
+                }
+            });
+
+            // YouTube URL validation
+            function isValidYouTubeUrl(url) {
+                const pattern = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+/;
+                return pattern.test(url);
+            }
+
+            // Real-time validation for YouTube link
+            if (wishLink) {
+                wishLink.addEventListener('input', function() {
+                    const url = this.value.trim();
+                    if (url && !isValidYouTubeUrl(url)) {
+                        linkError.style.display = 'block';
+                        this.style.borderColor = 'red';
+                    } else {
+                        linkError.style.display = 'none';
+                        this.style.borderColor = 'var(--powder-blue)';
+                    }
+                });
+            }
+
+            // Form submission
+            wishForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const newWish = {
+                    type: wishType.value,
+                    content: wishContent.value.trim(),
+                    link: wishLink.value.trim(),
+                    name: wishName.value.trim() || 'Anonymous',
+                    timestamp: new Date().toISOString()
+                };
+
+                // Validate content
+                if (!newWish.content) {
+                    alert('Please enter your wish content!');
+                    return;
+                }
+
+                // Validate YouTube link for songs/videos
+                if ((newWish.type === 'song' || newWish.type === 'video') && newWish.link) {
+                    if (!isValidYouTubeUrl(newWish.link)) {
+                        alert('Please enter a valid YouTube URL!');
+                        return;
+                    }
+                }
+
+                // Save wish (Firebase or localStorage)
+                if (useFirebase) {
+                    try {
+                        await window.addDoc(window.collection(window.wishesDB, 'wishes'), newWish);
+                        showToast('🌱 Your wish has been planted for everyone to see! 🌿');
+                    } catch (error) {
+                        console.error('Error adding wish to Firebase:', error);
+                        // Fallback to localStorage
+                        saveToLocalStorage(newWish);
+                        showToast('🌱 Your wish has been planted locally! 🌿');
+                    }
+                } else {
+                    saveToLocalStorage(newWish);
+                    showToast('🌱 Your wish has been planted locally! 🌿');
+                }
+                
+                // Reset form
+                wishForm.reset();
+                linkContainer.style.display = 'none';
+                contentLabel.textContent = 'Your Wish';
+                wishContent.placeholder = 'Share your heartfelt message...';
+                linkError.style.display = 'none';
+            });
+
+            function saveToLocalStorage(newWish) {
+                newWish.id = Date.now().toString();
+                newWish.position = getWishPosition(wishes.length);
+                wishes.push(newWish);
+                localStorage.setItem('wedding_wishes', JSON.stringify(wishes));
+                addLeafToTree(newWish);
+                updateStats();
+            }
+
+            // Add leaf to tree (NO ANIMATION)
+            function addLeafToTree(wish) {
+                const leavesContainer = document.getElementById('wishesLeaves');
+                if (!leavesContainer) return;
+                
+                // Create leaf group
+                const leafGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                leafGroup.classList.add('wish-leaf');
+                leafGroup.setAttribute('data-wish-id', wish.id);
+                
+                // Create leaf shape (heart-like for love theme)
+                const leaf = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                const leafPath = 'M12,21.35l-1.45-1.32C5.4,15.36,2,12.28,2,8.5 C2,5.42,4.42,3,7.5,3c1.74,0,3.41,0.81,4.5,2.09C13.09,3.81,14.76,3,16.5,3 C19.58,3,22,5.42,22,8.5c0,3.78-3.4,6.86-8.55,11.54L12,21.35z';
+                leaf.setAttribute('d', leafPath);
+                leaf.setAttribute('fill', wishColors[wish.type] || wishColors.prediction);
+                leaf.setAttribute('transform', `translate(${wish.position.x - 15.6}, ${wish.position.y - 15.6}) scale(1.3)`);
+                
+                // Create emoji/icon based on type (adjust position for larger scale)
+                const icon = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                icon.setAttribute('x', wish.position.x);
+                icon.setAttribute('y', wish.position.y + 5);
+                icon.setAttribute('text-anchor', 'middle');
+                icon.setAttribute('font-size', '16');
+                icon.setAttribute('fill', 'white');
+                icon.textContent = getWishEmoji(wish.type);
+                
+                leafGroup.appendChild(leaf);
+                leafGroup.appendChild(icon);
+                
+                // Add click handler
+                leafGroup.addEventListener('click', () => showWishModal(wish));
+                
+                leavesContainer.appendChild(leafGroup);
+            }
+
+            // Get emoji for wish type
+            function getWishEmoji(type) {
+                const emojis = {
+                    advice: '💝',
+                    memory: '📷',
+                    song: '🎵',
+                    video: '🎬',
+                    prediction: '🔮'
+                };
+                return emojis[type] || '💝';
+            }
+
+            // Show wish in modal
+            function showWishModal(wish) {
+                const modal = document.getElementById('wishModal');
+                const modalContent = document.getElementById('modalContent');
+                
+                let linkContent = '';
+                if (wish.link && (wish.type === 'song' || wish.type === 'video')) {
+                    const embedId = extractYouTubeId(wish.link);
+                    if (embedId) {
+                        linkContent = `
+                            <div style="margin-top: 1rem;">
+                                <iframe width="100%" height="315" 
+                                        src="https://www.youtube.com/embed/${embedId}" 
+                                        frameborder="0" allowfullscreen
+                                        style="border-radius: 10px;">
+                                </iframe>
+                            </div>
+                        `;
+                    } else {
+                        linkContent = `
+                            <div style="margin-top: 1rem;">
+                                <a href="${wish.link}" target="_blank" 
+                                   style="color: var(--sunset-orange); text-decoration: none; font-weight: 600;">
+                                    🎵 ${wish.type === 'video' ? 'Watch' : 'Listen'} on YouTube
+                                </a>
+                            </div>
+                        `;
+                    }
+                }
+                
+                modalContent.innerHTML = `
+                    <h3 style="color: var(--ocean-blue); margin-bottom: 1rem;">
+                        ${getWishEmoji(wish.type)} ${getWishTypeTitle(wish.type)}
+                    </h3>
+                    <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 15px; margin-bottom: 1rem;">
+                        <p style="font-size: 1.1rem; line-height: 1.6; margin: 0; color: var(--deep-teal);">
+                            "${wish.content}"
+                        </p>
+                    </div>
+                    ${linkContent}
+                    <div style="text-align: right; margin-top: 1rem;">
+                        <small style="color: #666; font-style: italic;">
+                            — ${wish.name}
+                        </small>
+                    </div>
+                `;
+                
+                modal.style.display = 'block';
+            }
+
+            // Extract YouTube video ID
+            function extractYouTubeId(url) {
+                const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+                const match = url.match(regExp);
+                return (match && match[2].length === 11) ? match[2] : null;
+            }
+
+            // Get wish type title
+            function getWishTypeTitle(type) {
+                const titles = {
+                    advice: 'Marriage Advice',
+                    memory: 'Favorite Memory',
+                    song: 'Song Recommendation',
+                    video: 'Video Message',
+                    prediction: 'Future Prediction'
+                };
+                return titles[type] || 'Wish';
+            }
+
+            // Show all wishes with embedded videos
+            document.getElementById('viewAllWishes').addEventListener('click', function() {
+                if (wishes.length === 0) {
+                    showToast('🌱 No wishes yet! Be the first to plant a leaf.');
+                    return;
+                }
+
+                const modal = document.getElementById('wishModal');
+                const modalContent = document.getElementById('modalContent');
+                
+                const wishesByType = wishes.reduce((acc, wish) => {
+                    if (!acc[wish.type]) acc[wish.type] = [];
+                    acc[wish.type].push(wish);
+                    return acc;
+                }, {});
+
+                let allWishesHtml = '<h3 style="color: var(--ocean-blue); margin-bottom: 2rem; text-align: center;">🌳 All Wishes from Our Tree</h3>';
+                
+                Object.keys(wishesByType).forEach(type => {
+                    allWishesHtml += `
+                        <div style="margin-bottom: 2rem;">
+                            <h4 style="color: var(--sunset-orange); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                ${getWishEmoji(type)} ${getWishTypeTitle(type)} (${wishesByType[type].length})
+                            </h4>
+                            ${wishesByType[type].map(wish => {
+                                let mediaContent = '';
+                                if (wish.link && (wish.type === 'song' || wish.type === 'video')) {
+                                    const embedId = extractYouTubeId(wish.link);
+                                    if (embedId) {
+                                        mediaContent = `
+                                            <div style="margin: 0.5rem 0;">
+                                                <iframe width="100%" height="200" 
+                                                        src="https://www.youtube.com/embed/${embedId}" 
+                                                        frameborder="0" allowfullscreen
+                                                        style="border-radius: 8px;">
+                                                </iframe>
+                                            </div>
+                                        `;
+                                    } else {
+                                        mediaContent = `<a href="${wish.link}" target="_blank" style="color: var(--sunset-orange); text-decoration: none; font-size: 0.9rem;">🎵 ${wish.type === 'video' ? 'Watch' : 'Listen'} on YouTube</a><br>`;
+                                    }
+                                }
+                                
+                                return `
+                                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 10px; margin-bottom: 1rem; border-left: 4px solid ${wishColors[wish.type]};">
+                                        <p style="margin: 0 0 0.5rem 0; font-size: 0.95rem; line-height: 1.5;">"${wish.content}"</p>
+                                        ${mediaContent}
+                                        <small style="color: #666; font-style: italic;">— ${wish.name}</small>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    `;
+                });
+                
+                modalContent.innerHTML = allWishesHtml;
+                modal.style.display = 'block';
+            });
+
+            // Close modal
+            const closeBtn = document.querySelector('.close');
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                    document.getElementById('wishModal').style.display = 'none';
+                });
+            }
+
+            // Close modal when clicking outside
+            window.addEventListener('click', function(e) {
+                const modal = document.getElementById('wishModal');
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // Update statistics for 6 cards
+            function updateStats() {
+                const wishCount = document.getElementById('wishCount');
+                const totalWishCount = document.getElementById('totalWishCount');
+                const songsCount = document.getElementById('songsCount');
+                const videosCount = document.getElementById('videosCount');
+                const adviceCount = document.getElementById('adviceCount');
+                const memoriesCount = document.getElementById('memoriesCount');
+                const predictionsCount = document.getElementById('predictionsCount');
+
+                if (wishCount) wishCount.textContent = wishes.length;
+                if (totalWishCount) totalWishCount.textContent = wishes.length;
+                if (songsCount) songsCount.textContent = wishes.filter(w => w.type === 'song').length;
+                if (videosCount) videosCount.textContent = wishes.filter(w => w.type === 'video').length;
+                if (adviceCount) adviceCount.textContent = wishes.filter(w => w.type === 'advice').length;
+                if (memoriesCount) memoriesCount.textContent = wishes.filter(w => w.type === 'memory').length;
+                if (predictionsCount) predictionsCount.textContent = wishes.filter(w => w.type === 'prediction').length;
+            }
+
+            // Show toast notification
+            function showToast(message) {
+                const toast = document.createElement('div');
+                toast.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: var(--sunset-orange);
+                    color: white;
+                    padding: 1rem 1.5rem;
+                    border-radius: 25px;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                    z-index: 3000;
+                    font-weight: 600;
+                    animation: slideInToast 0.3s ease-out;
+                `;
+                toast.textContent = message;
+                
+                document.body.appendChild(toast);
+                
+                setTimeout(() => {
+                    toast.style.animation = 'slideOutToast 0.3s ease-out';
+                    setTimeout(() => {
+                        if (toast.parentNode) {
+                            toast.parentNode.removeChild(toast);
+                        }
+                    }, 300);
+                }, 3000);
+            }
+
+            // Add toast animations to CSS
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideInToast {
+                    from { transform: translateX(100%); opacity: 0; }
+                    to { transform: translateX(0); opacity: 1; }
+                }
+                @keyframes slideOutToast {
+                    from { transform: translateX(0); opacity: 1; }
+                    to { transform: translateX(100%); opacity: 0; }
+                }
+                .wish-leaf {
+                    cursor: pointer;
+                    filter: url(#leafShadow);
+                    transition: opacity 0.2s ease;
+                }
+                .wish-leaf:hover {
+                    opacity: 0.8;
+                }
+                @media (max-width: 430px) {
+                    #wishesTreeSvg {
+                        height: 500px;
+                    }
+                    .wishes-tree-container {
+                        min-height: 500px;
+                    }
+                    .wishes-stats-grid {
+                        grid-template-columns: repeat(2, 1fr) !important;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        // Initialize wishes tree after DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initWishesTree();
+        });
+
+        // Also initialize after other scripts with delay
+        setTimeout(function() {
+            if (document.getElementById('wishForm')) {
+                initWishesTree();
+            }
+        }, 500);
+        
+        /* ==== End Wedding Wishes Tree JavaScript ==== */
     </script>
-  </body>
+</body>
 </html>

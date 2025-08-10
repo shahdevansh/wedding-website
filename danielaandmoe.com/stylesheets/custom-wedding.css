@@ -1,0 +1,495 @@
+/* Custom styles for our wedding */
+:root {
+    --sunset-orange: #FF6B35;
+    --ocean-blue: #004E89;
+    --golden-yellow: #FFD23F;
+    --powder-blue: #B0E0E6;
+    --warm-pink: #FF8FA3;
+    --deep-teal: #006A6B;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--powder-blue) 0%, var(--sunset-orange) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Responsive hero section styles */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    padding: 0;
+}
+
+.hero-images-wrapper {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.hero-image {
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 0;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero-image--bride {
+    background-image: url('images/nehalikiddo2.jpg');
+}
+
+.hero-image--groom {
+    background-image: url('images/devanshkiddo.jpeg');
+}
+
+/* Balloon Game (Note: balloon functionality removed, keeping styles for potential future use) */
+.balloon-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.balloon {
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    cursor: pointer;
+    pointer-events: all;
+    animation: float 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+.balloon:hover {
+    transform: scale(1.1);
+}
+
+.balloon.popped {
+    animation: pop 0.5s ease-out forwards;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes pop {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.7; }
+    100% { transform: scale(0); opacity: 0; }
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.couple-names {
+    font-size: 4rem;
+    font-weight: 300;
+    color: var(--ocean-blue);
+    margin-bottom: 1rem;
+}
+
+.wedding-date {
+    font-size: 1.5rem;
+    color: var(--deep-teal);
+    margin-bottom: 2rem;
+}
+
+/* Section Styling */
+.section-title {
+    font-size: 3rem;
+    color: var(--ocean-blue);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Button Styling */
+.btn-primary {
+    background: linear-gradient(135deg, var(--sunset-orange), var(--warm-pink));
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    color: white;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Timeline Components */
+.timeline-section {
+    background: var(--powder-blue);
+    padding: 4rem 0;
+}
+
+.timeline-item {
+    background: white;
+    padding: 2rem;
+    margin: 1rem 0;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Fun Facts Cards - Click and Hover to Flip */
+.index-fact {
+    cursor: pointer;
+    user-select: none;
+}
+
+.index-fact__intro {
+    cursor: default !important;
+}
+
+/* Hover effect for desktop (min-width: 770px) */
+@media only screen and (min-width: 770px) {
+    .index-fact:hover .index-fact__inner {
+        transform: rotateY(180deg);
+    }
+}
+
+/* Active state for click-based flipping (all devices) */
+.index-fact.is-active .index-fact__inner {
+    transform: rotateY(180deg) !important;
+}
+
+/* Map and Travel Sections */
+.map-section {
+    background: var(--ocean-blue);
+    color: white;
+    padding: 4rem 0;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none;
+}
+
+.balloon-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-width: 400px;
+    text-align: center;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Grid System */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 15px;
+}
+
+.col-md-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+    padding: 0 15px;
+}
+
+.col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 0 15px;
+}
+
+.col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.mb-3 {
+    margin-bottom: 1rem;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+/* Things To Do Section - Full-width cards */
+#things-to-do .index-facts__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+#things-to-do .index-fact {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    border: 1px solid #e9ecef;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+#things-to-do .index-fact__inner {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+#things-to-do .index-fact__inner-front,
+#things-to-do .index-fact__inner-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: #fff;
+    color: var(--ocean-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+#things-to-do .index-fact__inner-back {
+    transform: rotateY(180deg);
+}
+
+#things-to-do .index-fact__inner-front {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+#things-to-do .index-fact__inner-front-icon {
+    margin-bottom: 0.5rem;
+}
+
+/* Shoe-Game Section */
+.shoe-game-section {
+    padding: 4rem 0;
+    background: #fff4f0;
+}
+
+.shoe-game-section .banger-top {
+    letter-spacing: 2px;
+}
+
+#shoe-game .shoe-select {
+    font-family: 'CalibreWeb-Regular', 'Segoe UI', sans-serif;
+    background: var(--powder-blue);
+    border: 2px solid var(--sunset-orange);
+    border-radius: 8px;
+    padding: .35rem 1rem;
+    color: var(--ocean-blue);
+    display: inline-block;
+    max-width: 100%;
+    font-size: 1.4rem;
+}
+
+#shoe-game .shoe-select:focus {
+    outline: none;
+    box-shadow: 0 0 3px var(--sunset-orange);
+}
+
+.shoe-figures .figure {
+    max-width: 260px;
+    width: 100%;
+    transition: opacity .3s ease;
+}
+
+.flipH {
+    transform: scaleX(-1);
+}
+
+/* Responsive flipcard font sizes across all sections */
+.index-fact__inner-front h6 {
+    font-size: 1.2rem;
+}
+
+.index-fact__inner-front p {
+    font-size: 1rem;
+}
+
+.index-fact__inner-back p {
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .index-fact__inner-front h6 {
+        font-size: 1.1rem;
+    }
+    .index-fact__inner-front p {
+        font-size: 0.95rem;
+    }
+    .index-fact__inner-back p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .col-md-6, .col-md-8, .col-md-3, .col-md-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .couple-names {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-section {
+        min-height: 100vh;
+    }
+    
+    .hero-images-wrapper {
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    .hero-image {
+        flex: 1;
+        min-height: 50vh;
+        width: 100%;
+    }
+    
+    /* Travel section mobile responsiveness */
+    #travel .col-md-6 {
+        margin-bottom: 2rem;
+    }
+    
+    #travel .col-md-6:last-child {
+        padding-left: 1rem;
+    }
+    
+    .index-fact__inner-front h6 {
+        font-size: 1rem;
+    }
+    .index-fact__inner-front p {
+        font-size: 0.9rem;
+    }
+    .index-fact__inner-back p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    #shoe-game .shoe-select {
+        width: 90%;
+        margin-top: .75rem;
+        font-size: 1.4rem;
+    }
+    
+    .shoe-figures .figure {
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        min-height: 100vh;
+    }
+    
+    .hero-images-wrapper {
+        height: 100vh;
+    }
+    
+    .hero-image {
+        flex: 1;
+        min-height: 50vh;
+        width: 100%;
+    }
+    
+    .index-fact__inner-front h6 {
+        font-size: 0.9rem;
+    }
+    .index-fact__inner-front p {
+        font-size: 0.8rem;
+    }
+    .index-fact__inner-back p {
+        font-size: 0.7rem;
+    }
+}
+
+/* Section-specific overrides */
+#faq .index-fact__inner-back p {
+    font-size: inherit;
+}
+
+#things-to-do .index-fact__inner-back {
+    font-size: inherit;
+} 
